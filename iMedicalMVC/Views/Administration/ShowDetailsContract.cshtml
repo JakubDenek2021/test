@@ -1,0 +1,85 @@
+﻿@model iMedicalMVC.ViewModel.Employee.ShowDetailsContractViewModel
+
+@{
+    ViewBag.Title = "ShowDetailsContract";
+    Layout = "~/Views/Shared/_AdministrationrLayout.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="~/Content/css/ProfileView.css" rel="stylesheet" />
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container" style="margin-top:180px;">
+    <div class="row">
+
+
+
+        <div class="col-md-7 ">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">  <h4>Szczegóły kontraktu</h4></div>
+                <div class="panel-body">
+
+                    <div class="box box-info">
+
+                        <div class="box-body">
+                            <div class="col-sm-6">
+
+
+
+
+                            </div>
+                            <div class="col-sm-12">
+                                <span>   <h4 style="color:#00b1b1;">Kontrakt nr @Html.DisplayFor(model => model.NumberContract)</h4></span>
+
+                            </div>
+                            <div class="clearfix"></div>
+                            <hr style="margin:5px 0 5px 0;">
+
+
+                            <div class="col-sm-5 col-xs-6 tital ">Imię i nazwisko</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.LastName)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Data zawarcia</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.ConclusionDate) </div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Forma zatrudnienia</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.ContractTypName) </div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Wymiar zatrudnienia</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.TenureName) </div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Stanowisko</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.JobTypeName) </div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Stawka ryczałtowa</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.MonthRate) </div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Stawka godzinowa</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.HourlyRate) </div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Premia</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.Bonu) </div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Numer konta</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.NumberAccount) </div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+    $(function () {
+                $('#profile-image1').on('click', function () {
+                    $('#profile-image-upload').click();
+                });
+            });</script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    </div>
+</div>

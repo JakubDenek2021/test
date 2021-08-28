@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Dictionary";
+    Layout = "~/Views/Shared/_AdministrationrLayout.cshtml";
+}
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/Content/css/table.css" rel="stylesheet" />
+
+<section id="tabs" class="project-tab" style="margin-top: 100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <table class="table" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center;">Słownik</th>
+                                    <th style="text-align:center;">Rodzaj</th>
+                                    <th></th>
+                           
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                              
+                                <tr style="text-align: center;">
+                                    <td class="cell100 column1">Typ wizyty</td>
+                                    <td class="cell100 column1">Ogólny</td>
+                                    <td class="cell100 column4"><button class="btn btn-sm btn-primary"><a href="/VisitType/ShowAll" style="color: white; text-decoration: none;">Zobacz</a></button> <button class="btn btn-sm btn-primary"><a href="/VisitType/AddNew" style="color: white; text-decoration: none;">Dodaj</a></button></td>
+
+                                </tr>
+                                <tr style="text-align: center;">
+                                    <td class="cell100 column1">Typ umowy</td>
+                                    <td class="cell100 column1">Ogólny</td>
+                                    <td class="cell100 column4"><button class="btn btn-sm btn-primary"><a href="/ContractType/ShowAll" style="color: white; text-decoration: none;">Zobacz</a></button> <button class="btn btn-sm btn-primary"><a href="/ContractType/AddNew" style="color: white; text-decoration: none;">Dodaj</a></button></td>
+
+                                </tr>
+                                <tr style="text-align: center;">
+                                    <td class="cell100 column1">Typ zatrudnienia</td>
+                                    <td class="cell100 column1">Ogólny</td>
+                                    <td class="cell100 column4"><button class="btn btn-sm btn-primary"><a href="/TenureType/ShowAll" style="color: white; text-decoration: none;">Zobacz</a></button> <button class="btn btn-sm btn-primary"><a href="/TenureType/AddNew" style="color: white; text-decoration: none;">Dodaj</a></button></td>
+
+                                </tr>
+                                <tr style="text-align: center;">
+                                    <td class="cell100 column1">Typ tytułu</td>
+                                    <td class="cell100 column1">Ogólny</td>
+                                    <td class="cell100 column4"><button class="btn btn-sm btn-primary"><a href="/TitleType/ShowAll" style="color: white; text-decoration: none;">Zobacz</a></button> <button class="btn btn-sm btn-primary"><a href="/TitleType/AddNew" style="color: white; text-decoration: none;">Dodaj</a></button></td>
+
+                                </tr>
+                               
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+

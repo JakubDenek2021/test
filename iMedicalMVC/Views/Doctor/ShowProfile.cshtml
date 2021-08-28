@@ -1,0 +1,139 @@
+﻿@model iMedicalMVC.ViewModel.Account.ShowDetailsProfileEmployeeViewModel
+
+@{
+    ViewBag.Title = "ShowProfile";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="~/Content/css/ProfileView.css" rel="stylesheet" />
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container" style="margin-top:180px;">
+    <div class="row">
+
+
+
+        <div class="col-md-7 ">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">  <h4>Profil użytkownika</h4></div>
+                <div class="panel-body">
+
+                    <div class="box box-info">
+
+                        <div class="box-body">
+                            
+                            <div class="col-sm-6">
+                                <h4 style="color:#00b1b1;">          @Html.DisplayFor(model => model.FirstName)</h4></span>
+                                <span><p>@Html.DisplayFor(model => model.Number_Employee)</p></span>
+
+                            </div>
+                            <div class="clearfix"></div>
+                            <hr style="margin:5px 0 5px 0;">
+
+
+                            <div class="col-sm-5 col-xs-6 tital ">Imię i nazwisko</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.FirstName)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Drugie imię</div><div class="col-sm-7">@Html.DisplayFor(model => model.LastName)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Data urodzenia</div><div class="col-sm-7"> @Html.DisplayFor(model => model.DateOfBirth)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">PESEL</div><div class="col-sm-7">@Html.DisplayFor(model => model.PESEL)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Kraj zameldowania </div><div class="col-sm-7">@Html.DisplayFor(model => model.CountryRegistration)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Kod pocztowy zameldowania </div><div class="col-sm-7">@Html.DisplayFor(model => model.PostalCodeRegistration)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Miejscowość zameldowania </div><div class="col-sm-7">@Html.DisplayFor(model => model.CityRegistration)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Ulica zameldowania </div><div class="col-sm-7">@Html.DisplayFor(model => model.StreetRegistration)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Numer budynku zameldowania </div><div class="col-sm-7">@Html.DisplayFor(model => model.BuildingNumberRegistration)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Numer lokalu zameldowania </div><div class="col-sm-7">@Html.DisplayFor(model => model.HousingNumberRegistration)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Kraj zamieszkania </div><div class="col-sm-7">@Html.DisplayFor(model => model.CityResidence)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Kod pocztowy zamieszkania </div><div class="col-sm-7">@Html.DisplayFor(model => model.PostalCodeResidence)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Miejscowość zamieszkania </div><div class="col-sm-7">@Html.DisplayFor(model => model.CityResidence)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Ulica zamieszkania </div><div class="col-sm-7">@Html.DisplayFor(model => model.StreetResidence)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Numer budynku zamieszkania </div><div class="col-sm-7">@Html.DisplayFor(model => model.BuildingNumberResidence)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Numer lokalu zamieszkania </div><div class="col-sm-7">@Html.DisplayFor(model => model.HouseNumberResidence)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Telefon</div><div class="col-sm-7">@Html.DisplayFor(model => model.Phone)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">E-mail</div><div class="col-sm-7">@Html.DisplayFor(model => model.Email)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <script>
+    $(function () {
+                $('#profile-image1').on('click', function () {
+                    $('#profile-image-upload').click();
+                });
+            });</script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    </div>
+</div>

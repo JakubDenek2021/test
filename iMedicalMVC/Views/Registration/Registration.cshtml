@@ -1,0 +1,217 @@
+﻿@model iMedicalMVC.ViewModel.Account.RegistrationViewModel
+
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_ParamedicalLayout .cshtml";
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/homePage.css">
+    <link href="~/Content/img/favicon.png" rel="icon">
+    <link href="~/Content/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="~/Content/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Content/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+        <div class="container d-flex">
+            <div class="contact-info mr-auto">
+                <i><strong>Jakub Denek </strong>  "System zarządzania przychodnią lekarską"</i>
+
+            </div>
+            <div class="social-links">
+                <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+                <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+                <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+                <a href="#" class="skype"><i class="icofont-skype"></i></a>
+                <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo mr-auto"><a href="index.html">Medilab</a></h1>
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="#about">O nas</a></li>
+                    <li><a href="#services">Usługi</a></li>
+                    <li><a href="#departments">Placówki</a></li>
+                    <li><a href="#doctors">Lekarze</a></li>
+
+                    <li><a href="#contact">Kontakt</a></li>
+
+                </ul>
+            </nav>
+
+            <a href="/Registration/Registration" class="appointment-btn scrollto">Zarejestruj się</a>
+
+        </div>
+    </header>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="registration-form">
+            <div class="test">
+                <div class="form-icon">
+                    <span><i class="icon icon-user"></i></span>
+                </div>
+                <h3>Dane osobowe</h3>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control item", placeholder = "Imię" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control item", placeholder = "Drugie imię" } })
+                    @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control item", placeholder = "Nazwisko" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control item", placeholder = "Data urodzenia" } })
+                    @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.PESEL, new { htmlAttributes = new { @class = "form-control item", placeholder = "PESEL" } })
+                    @Html.ValidationMessageFor(model => model.PESEL, "", new { @class = "text-danger" })
+                </div>
+
+                <h3>Dane meldunkowe</h3>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.CountryRegistration, new { htmlAttributes = new { @class = "form-control item", placeholder = "Kraj" } })
+                    @Html.ValidationMessageFor(model => model.CountryRegistration, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.CityRegistration, new { htmlAttributes = new { @class = "form-control item", placeholder = "Miasto" } })
+                    @Html.ValidationMessageFor(model => model.CityRegistration, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.PostalCodeRegistration, new { htmlAttributes = new { @class = "form-control item", placeholder = "Kod pocztowy" } })
+                    @Html.ValidationMessageFor(model => model.PostalCodeRegistration, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.StreetRegistration, new { htmlAttributes = new { @class = "form-control item", placeholder = "Ulica" } })
+                    @Html.ValidationMessageFor(model => model.StreetRegistration, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.BuildingNumberRegistration, new { htmlAttributes = new { @class = "form-control item", placeholder = "Numer domu" } })
+                    @Html.ValidationMessageFor(model => model.BuildingNumberRegistration, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.HousingNumberRegistration, new { htmlAttributes = new { @class = "form-control item", placeholder = "Numer mieszkania" } })
+                    @Html.ValidationMessageFor(model => model.HousingNumberRegistration, "", new { @class = "text-danger" })
+                </div>
+                <h3>Dane do korespondencji</h3>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.CountryResidence, new { htmlAttributes = new { @class = "form-control item", placeholder = "Kraj" } })
+                    @Html.ValidationMessageFor(model => model.CountryResidence, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.PostalCodeResidence, new { htmlAttributes = new { @class = "form-control item", placeholder = "Kod pocztowy" } })
+                    @Html.ValidationMessageFor(model => model.PostalCodeResidence, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.CityResidence, new { htmlAttributes = new { @class = "form-control item", placeholder = "Miasto" } })
+                    @Html.ValidationMessageFor(model => model.CityResidence, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.StreetResidence, new { htmlAttributes = new { @class = "form-control item", placeholder = "Ulica" } })
+                    @Html.ValidationMessageFor(model => model.StreetResidence, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.BuildingNumberResidence, new { htmlAttributes = new { @class = "form-control item", placeholder = "Numer budynku" } })
+                    @Html.ValidationMessageFor(model => model.BuildingNumberResidence, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.HouseNumberResidence, new { htmlAttributes = new { @class = "form-control item", placeholder = "Numer mieszkania" } })
+                    @Html.ValidationMessageFor(model => model.HouseNumberResidence, "", new { @class = "text-danger" })
+                </div>
+                <h3>Dane kontaktowe</h3>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control item", placeholder = "Adres e-mail" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control item", placeholder = "Telefon" } })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                </div>
+                <h3>Dane do logowania</h3>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control item", placeholder = "Login" } })
+                    @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { type = "password", @class = "form-control item", placeholder = "Hasło" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.ReturnPassword, new { htmlAttributes = new { type = "password", @class = "form-control item", placeholder = "Powtórz hasło" } })
+                    @Html.ValidationMessageFor(model => model.ReturnPassword, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block create-account">Zarejestruj</button>
+                </div>
+            </div>
+            <div class="social-media">
+                <h5>Odwiedź nas w social media</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="icon-social-facebook" title="Facebook"></i></a>
+                    <a href="#"><i class="icon-social-google" title="Google"></i></a>
+                    <a href="#"><i class="icon-social-twitter" title="Twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+    }
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

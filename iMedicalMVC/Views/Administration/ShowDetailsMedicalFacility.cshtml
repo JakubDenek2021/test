@@ -1,0 +1,93 @@
+﻿@model iMedicalMVC.ViewModel.MedicalFacility.ShowDetailsMedicalFacilityViewModel
+
+@{
+    ViewBag.Title = "ShowDetailsMedicalFacility";
+    Layout = "~/Views/Shared/_AdministrationrLayout.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="~/Content/css/ProfileView.css" rel="stylesheet" />
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container" style="margin-top:180px;">
+    <div class="row">
+
+
+
+        <div class="col-md-7 ">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">  <h4>Profil placówki</h4></div>
+                <div class="panel-body">
+
+                    <div class="box box-info">
+
+                        <div class="box-body">
+                            <div class="col-sm-6">
+                               
+
+                         
+
+                            </div>
+                            <div class="col-sm-12">
+                                <span>   <h4 style="color:#00b1b1;">@Html.DisplayFor(model => model.Long_name)</h4></span>
+                                <span><p>@Html.DisplayFor(model => model.Short_name)</p></span>
+                            </div>
+                            <div class="clearfix"></div>
+                            <hr style="margin:5px 0 5px 0;">
+
+
+                            <div class="col-sm-5 col-xs-6 tital ">Pełna nazwa</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.Long_name)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Nazwa skrócona</div><div class="col-sm-7">@Html.DisplayFor(model => model.Short_name)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Miejscowość</div><div class="col-sm-7"> @Html.DisplayFor(model => model.City)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Kod pocztowy</div><div class="col-sm-7">@Html.DisplayFor(model => model.PostCode)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Ulica</div><div class="col-sm-7">@Html.DisplayFor(model => model.Street)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Numer budynku</div><div class="col-sm-7">@Html.DisplayFor(model => model.BuildingNumber)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">NIP </div><div class="col-sm-7">@Html.DisplayFor(model => model.NIP)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Status placówki</div><div class="col-sm-7">@Html.DisplayFor(model => model.Status)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+    $(function () {
+                $('#profile-image1').on('click', function () {
+                    $('#profile-image-upload').click();
+                });
+            });</script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    </div>
+</div>
+

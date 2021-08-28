@@ -1,0 +1,1514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="iMedicalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Billing_tenure">
+          <Key>
+            <PropertyRef Name="ID_Biling_tenure" />
+          </Key>
+          <Property Name="ID_Biling_tenure" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Contract" Type="int" />
+          <Property Name="Insertion_date" Type="datetime" />
+          <Property Name="Date_from" Type="datetime" />
+          <Property Name="Date_to" Type="datetime" />
+          <Property Name="Hours_number" Type="nvarchar" MaxLength="64" />
+          <Property Name="hours_extra_number" Type="nvarchar" MaxLength="64" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="512" />
+          <Property Name="treatments_paid" Type="nvarchar" MaxLength="64" />
+          <Property Name="treatments_reimbursed" Type="nvarchar" MaxLength="64" />
+          <Property Name="visits_paid" Type="nvarchar" MaxLength="64" />
+          <Property Name="visits_reimbursed" Type="nvarchar" MaxLength="64" />
+          <Property Name="NumberBilling" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="ID_Contract" />
+          </Key>
+          <Property Name="ID_Contract" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Contract_Type" Type="int" />
+          <Property Name="ID_Tenure_type" Type="int" />
+          <Property Name="ID_Employee" Type="int" />
+          <Property Name="ID_Job_Type" Type="int" />
+          <Property Name="Bonus" Type="nvarchar" MaxLength="64" />
+          <Property Name="HourlyRate" Type="nvarchar" MaxLength="64" />
+          <Property Name="MonthlyRate" Type="nvarchar" MaxLength="64" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="256" />
+          <Property Name="NumberAccount" Type="nvarchar" MaxLength="64" />
+          <Property Name="ConclusionDate" Type="datetime" />
+          <Property Name="NumberContract" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Contract_Type">
+          <Key>
+            <PropertyRef Name="ID_Contract_Type" />
+          </Key>
+          <Property Name="ID_Contract_Type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID_Employee" />
+          </Key>
+          <Property Name="ID_Employee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Login" Type="int" />
+          <Property Name="ID_EmployeeType" Type="int" />
+          <Property Name="Number_Employee" Type="nvarchar" MaxLength="32" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="32" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="12" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="PESEL" Type="nvarchar" MaxLength="16" />
+          <Property Name="CountryRegistration" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="PostalCodeRegistration" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="CityRegistration" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="StreetRegistration" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="BuildingNumberRegistration" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="HousingNumberRegistration" Type="nvarchar" MaxLength="11" />
+          <Property Name="Email" Type="nvarchar" MaxLength="128" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="CountryResidence" Type="nvarchar" MaxLength="32" />
+          <Property Name="PostalCodeResidence" Type="nvarchar" MaxLength="6" />
+          <Property Name="CityResidence" Type="nvarchar" MaxLength="64" />
+          <Property Name="StreetResidence" Type="nvarchar" MaxLength="64" />
+          <Property Name="BuildingNumberResidence" Type="nvarchar" MaxLength="11" />
+          <Property Name="HouseNumberResidence" Type="nvarchar" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="Employee_Type">
+          <Key>
+            <PropertyRef Name="ID_EmployeeType" />
+          </Key>
+          <Property Name="ID_EmployeeType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Job_Type">
+          <Key>
+            <PropertyRef Name="ID_Job_Type" />
+          </Key>
+          <Property Name="ID_Job_Type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="ID_Login" />
+          </Key>
+          <Property Name="ID_Login" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medic_details">
+          <Key>
+            <PropertyRef Name="Id_Details" />
+          </Key>
+          <Property Name="Id_Details" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Medical_examination" Type="int" />
+          <Property Name="Result_1" Type="nvarchar" MaxLength="550" />
+          <Property Name="Result_2" Type="nvarchar" MaxLength="550" />
+          <Property Name="Result_3" Type="nvarchar" MaxLength="550" />
+          <Property Name="Result_4" Type="nvarchar" MaxLength="550" />
+          <Property Name="Recommendations" Type="nvarchar" MaxLength="550" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Medical_examination">
+          <Key>
+            <PropertyRef Name="ID_Medical_examination" />
+          </Key>
+          <Property Name="ID_Medical_examination" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Patient" Type="int" />
+          <Property Name="ID_medical_examination_type" Type="int" />
+          <Property Name="NumberReferral" Type="nvarchar" MaxLength="15" />
+          <Property Name="IssueDate" Type="datetime" />
+          <Property Name="DateEpiration" Type="datetime" />
+          <Property Name="NumberMedicalExamination" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Medical_examination_type">
+          <Key>
+            <PropertyRef Name="ID_medical_examination_type" />
+          </Key>
+          <Property Name="ID_medical_examination_type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="ID_Patient" />
+          </Key>
+          <Property Name="ID_Patient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Login" Type="int" />
+          <Property Name="Number_Patient" Type="nvarchar" MaxLength="32" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="32" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="12" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="PESEL" Type="nvarchar" MaxLength="16" />
+          <Property Name="CountryRegistration" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="PostalCodeRegistration" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="CityRegistration" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="StreetRegistration" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="BuildingNumberRegistration" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="HousingNumberRegistration" Type="nvarchar" MaxLength="11" />
+          <Property Name="Email" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="16" />
+          <Property Name="CountryResidence" Type="nvarchar" MaxLength="32" />
+          <Property Name="PostalCodeResidence" Type="nvarchar" MaxLength="6" />
+          <Property Name="CityResidence" Type="nvarchar" MaxLength="64" />
+          <Property Name="StreetResidence" Type="nvarchar" MaxLength="64" />
+          <Property Name="BuildingNumberResidence" Type="nvarchar" MaxLength="11" />
+          <Property Name="HouseNumberResidence" Type="nvarchar" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="Payment_Details">
+          <Key>
+            <PropertyRef Name="ID_Payment_Details" />
+          </Key>
+          <Property Name="ID_Payment_Details" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Contract" Type="int" />
+          <Property Name="ID_Billing_tenure" Type="int" />
+          <Property Name="Payment_date" Type="datetime" Nullable="false" />
+          <Property Name="Payment_due_date" Type="datetime" Nullable="false" />
+          <Property Name="Total" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="256" />
+          <Property Name="PaymentDetailsNumber" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Prescription">
+          <Key>
+            <PropertyRef Name="ID_Prescription" />
+          </Key>
+          <Property Name="ID_Prescription" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Visit" Type="int" />
+          <Property Name="ID_Patient" Type="int" />
+          <Property Name="NumberPrescription" Type="nvarchar" MaxLength="15" />
+          <Property Name="Medication_1" Type="nvarchar" MaxLength="64" />
+          <Property Name="Medication_2" Type="nvarchar" MaxLength="64" />
+          <Property Name="Medication_3" Type="nvarchar" MaxLength="64" />
+          <Property Name="Medication_4" Type="nvarchar" MaxLength="64" />
+          <Property Name="Medication_5" Type="nvarchar" MaxLength="64" />
+          <Property Name="Medication_6" Type="nvarchar" MaxLength="64" />
+          <Property Name="Medication_7" Type="nvarchar" MaxLength="64" />
+          <Property Name="IssueDate" Type="datetime" />
+          <Property Name="PrescriptionCode" Type="int" />
+          <Property Name="Dose_1" Type="nvarchar" MaxLength="150" />
+          <Property Name="Dose_2" Type="nvarchar" MaxLength="150" />
+          <Property Name="Dose_3" Type="nvarchar" MaxLength="150" />
+          <Property Name="Dose_4" Type="nvarchar" MaxLength="150" />
+          <Property Name="Dose_5" Type="nvarchar" MaxLength="150" />
+          <Property Name="Dose_6" Type="nvarchar" MaxLength="150" />
+          <Property Name="Dose_7" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Referral">
+          <Key>
+            <PropertyRef Name="ID_Referral" />
+          </Key>
+          <Property Name="ID_Referral" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Patient" Type="int" />
+          <Property Name="ID_medical_examination_type" Type="int" />
+          <Property Name="Referral_number" Type="nvarchar" MaxLength="15" />
+          <Property Name="Issue_Date" Type="datetime" />
+          <Property Name="ReferralCod" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="Status_cod">
+          <Key>
+            <PropertyRef Name="IdStatus" />
+          </Key>
+          <Property Name="IdStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Tenure_type">
+          <Key>
+            <PropertyRef Name="ID_Tenure_type" />
+          </Key>
+          <Property Name="ID_Tenure_type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Title_Type">
+          <Key>
+            <PropertyRef Name="ID_Tytle_type" />
+          </Key>
+          <Property Name="ID_Tytle_type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Visit">
+          <Key>
+            <PropertyRef Name="ID_Visit" />
+          </Key>
+          <Property Name="ID_Visit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Patient" Type="int" />
+          <Property Name="ID_Visit_type" Type="int" />
+          <Property Name="IdStatus" Type="int" />
+          <Property Name="ID_Employee" Type="int" />
+          <Property Name="Registration_date" Type="datetime" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="256" />
+          <Property Name="Date_hour_visit_start" Type="datetime" />
+          <Property Name="Data_hour_visit_end" Type="datetime" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="VisitNumber" Type="nvarchar" MaxLength="64" />
+          <Property Name="Activities_performed" Type="nvarchar" MaxLength="512" />
+          <Property Name="Recomendations" Type="nvarchar" MaxLength="512" />
+          <Property Name="General_information" Type="nvarchar" MaxLength="512" />
+          <Property Name="Dosage_of_medication" Type="nvarchar" MaxLength="512" />
+          <Property Name="Comments2" Type="nvarchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="Visit_type">
+          <Key>
+            <PropertyRef Name="ID_Visit_type" />
+          </Key>
+          <Property Name="ID_Visit_type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BILLING__RELATIONS_CONTRACT">
+          <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
+          <End Role="Billing_tenure" Type="Self.Billing_tenure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="ID_Contract" />
+            </Principal>
+            <Dependent Role="Billing_tenure">
+              <PropertyRef Name="ID_Contract" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTRACT_RELATIONS_CONTRACT">
+          <End Role="Contract_Type" Type="Self.Contract_Type" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract_Type">
+              <PropertyRef Name="ID_Contract_Type" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="ID_Contract_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTRACT_RELATIONS_EMPLOYEE">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Employee" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="ID_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTRACT_RELATIONS_JOB_TYPE">
+          <End Role="Job_Type" Type="Self.Job_Type" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_Type">
+              <PropertyRef Name="ID_Job_Type" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="ID_Job_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTRACT_RELATIONS_TENURE_T">
+          <End Role="Tenure_type" Type="Self.Tenure_type" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tenure_type">
+              <PropertyRef Name="ID_Tenure_type" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="ID_Tenure_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLOYEE_RELATIONS_EMPLOYEE">
+          <End Role="Employee_Type" Type="Self.Employee_Type" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_Type">
+              <PropertyRef Name="ID_EmployeeType" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="ID_EmployeeType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLOYEE_RELATIONS_LOGIN">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="ID_Login" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="ID_Login" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MEDIC_DE_RELATIONS_MEDICAL_">
+          <End Role="Medical_examination" Type="Self.Medical_examination" Multiplicity="0..1" />
+          <End Role="Medic_details" Type="Self.Medic_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medical_examination">
+              <PropertyRef Name="ID_Medical_examination" />
+            </Principal>
+            <Dependent Role="Medic_details">
+              <PropertyRef Name="ID_Medical_examination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MEDICAL__RELATIONS_MEDICAL_">
+          <End Role="Medical_examination_type" Type="Self.Medical_examination_type" Multiplicity="0..1" />
+          <End Role="Medical_examination" Type="Self.Medical_examination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medical_examination_type">
+              <PropertyRef Name="ID_medical_examination_type" />
+            </Principal>
+            <Dependent Role="Medical_examination">
+              <PropertyRef Name="ID_medical_examination_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MEDICAL__RELATIONS_PATIENT">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Medical_examination" Type="Self.Medical_examination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID_Patient" />
+            </Principal>
+            <Dependent Role="Medical_examination">
+              <PropertyRef Name="ID_Patient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PATIENT_RELATIONS_LOGIN">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="ID_Login" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="ID_Login" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAYMENT__RELATIONS_CONTRACT">
+          <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
+          <End Role="Payment_Details" Type="Self.Payment_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="ID_Contract" />
+            </Principal>
+            <Dependent Role="Payment_Details">
+              <PropertyRef Name="ID_Contract" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRESCRIP_RELATIONS_PATIENT">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID_Patient" />
+            </Principal>
+            <Dependent Role="Prescription">
+              <PropertyRef Name="ID_Patient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRESCRIP_RELATIONS_VISIT">
+          <End Role="Visit" Type="Self.Visit" Multiplicity="0..1" />
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visit">
+              <PropertyRef Name="ID_Visit" />
+            </Principal>
+            <Dependent Role="Prescription">
+              <PropertyRef Name="ID_Visit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REFERRAL_RELATIONS_PATIENT">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Referral" Type="Self.Referral" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID_Patient" />
+            </Principal>
+            <Dependent Role="Referral">
+              <PropertyRef Name="ID_Patient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VISIT_RELATIONS_EMPLOYEE">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Visit" Type="Self.Visit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Employee" />
+            </Principal>
+            <Dependent Role="Visit">
+              <PropertyRef Name="ID_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VISIT_RELATIONS_PATIENT">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Visit" Type="Self.Visit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID_Patient" />
+            </Principal>
+            <Dependent Role="Visit">
+              <PropertyRef Name="ID_Patient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VISIT_RELATIONS_STATUS_C">
+          <End Role="Status_cod" Type="Self.Status_cod" Multiplicity="0..1" />
+          <End Role="Visit" Type="Self.Visit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status_cod">
+              <PropertyRef Name="IdStatus" />
+            </Principal>
+            <Dependent Role="Visit">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VISIT_RELATIONS_VISIT_TY">
+          <End Role="Visit_type" Type="Self.Visit_type" Multiplicity="0..1" />
+          <End Role="Visit" Type="Self.Visit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visit_type">
+              <PropertyRef Name="ID_Visit_type" />
+            </Principal>
+            <Dependent Role="Visit">
+              <PropertyRef Name="ID_Visit_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="iMedicalModelStoreContainer">
+          <EntitySet Name="Billing_tenure" EntityType="Self.Billing_tenure" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contract_Type" EntityType="Self.Contract_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_Type" EntityType="Self.Employee_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Job_Type" EntityType="Self.Job_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medic_details" EntityType="Self.Medic_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medical_examination" EntityType="Self.Medical_examination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medical_examination_type" EntityType="Self.Medical_examination_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment_Details" EntityType="Self.Payment_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prescription" EntityType="Self.Prescription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Referral" EntityType="Self.Referral" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status_cod" EntityType="Self.Status_cod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tenure_type" EntityType="Self.Tenure_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Title_Type" EntityType="Self.Title_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Visit" EntityType="Self.Visit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Visit_type" EntityType="Self.Visit_type" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BILLING__RELATIONS_CONTRACT" Association="Self.FK_BILLING__RELATIONS_CONTRACT">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="Billing_tenure" EntitySet="Billing_tenure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTRACT_RELATIONS_CONTRACT" Association="Self.FK_CONTRACT_RELATIONS_CONTRACT">
+            <End Role="Contract_Type" EntitySet="Contract_Type" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTRACT_RELATIONS_EMPLOYEE" Association="Self.FK_CONTRACT_RELATIONS_EMPLOYEE">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTRACT_RELATIONS_JOB_TYPE" Association="Self.FK_CONTRACT_RELATIONS_JOB_TYPE">
+            <End Role="Job_Type" EntitySet="Job_Type" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTRACT_RELATIONS_TENURE_T" Association="Self.FK_CONTRACT_RELATIONS_TENURE_T">
+            <End Role="Tenure_type" EntitySet="Tenure_type" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLOYEE_RELATIONS_EMPLOYEE" Association="Self.FK_EMPLOYEE_RELATIONS_EMPLOYEE">
+            <End Role="Employee_Type" EntitySet="Employee_Type" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLOYEE_RELATIONS_LOGIN" Association="Self.FK_EMPLOYEE_RELATIONS_LOGIN">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MEDIC_DE_RELATIONS_MEDICAL_" Association="Self.FK_MEDIC_DE_RELATIONS_MEDICAL_">
+            <End Role="Medical_examination" EntitySet="Medical_examination" />
+            <End Role="Medic_details" EntitySet="Medic_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MEDICAL__RELATIONS_MEDICAL_" Association="Self.FK_MEDICAL__RELATIONS_MEDICAL_">
+            <End Role="Medical_examination_type" EntitySet="Medical_examination_type" />
+            <End Role="Medical_examination" EntitySet="Medical_examination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MEDICAL__RELATIONS_PATIENT" Association="Self.FK_MEDICAL__RELATIONS_PATIENT">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Medical_examination" EntitySet="Medical_examination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PATIENT_RELATIONS_LOGIN" Association="Self.FK_PATIENT_RELATIONS_LOGIN">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAYMENT__RELATIONS_CONTRACT" Association="Self.FK_PAYMENT__RELATIONS_CONTRACT">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="Payment_Details" EntitySet="Payment_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRESCRIP_RELATIONS_PATIENT" Association="Self.FK_PRESCRIP_RELATIONS_PATIENT">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Prescription" EntitySet="Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRESCRIP_RELATIONS_VISIT" Association="Self.FK_PRESCRIP_RELATIONS_VISIT">
+            <End Role="Visit" EntitySet="Visit" />
+            <End Role="Prescription" EntitySet="Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REFERRAL_RELATIONS_PATIENT" Association="Self.FK_REFERRAL_RELATIONS_PATIENT">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Referral" EntitySet="Referral" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISIT_RELATIONS_EMPLOYEE" Association="Self.FK_VISIT_RELATIONS_EMPLOYEE">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Visit" EntitySet="Visit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISIT_RELATIONS_PATIENT" Association="Self.FK_VISIT_RELATIONS_PATIENT">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Visit" EntitySet="Visit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISIT_RELATIONS_STATUS_C" Association="Self.FK_VISIT_RELATIONS_STATUS_C">
+            <End Role="Status_cod" EntitySet="Status_cod" />
+            <End Role="Visit" EntitySet="Visit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISIT_RELATIONS_VISIT_TY" Association="Self.FK_VISIT_RELATIONS_VISIT_TY">
+            <End Role="Visit_type" EntitySet="Visit_type" />
+            <End Role="Visit" EntitySet="Visit" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="iMedicalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Billing_tenure">
+          <Key>
+            <PropertyRef Name="ID_Biling_tenure" />
+          </Key>
+          <Property Name="ID_Biling_tenure" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Contract" Type="Int32" />
+          <Property Name="Insertion_date" Type="DateTime" Precision="3" />
+          <Property Name="Date_from" Type="DateTime" Precision="3" />
+          <Property Name="Date_to" Type="DateTime" Precision="3" />
+          <Property Name="Hours_number" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="hours_extra_number" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="treatments_paid" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="treatments_reimbursed" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="visits_paid" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="visits_reimbursed" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="NumberBilling" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contract" Relationship="Self.FK_BILLING__RELATIONS_CONTRACT" FromRole="Billing_tenure" ToRole="Contract" />
+        </EntityType>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="ID_Contract" />
+          </Key>
+          <Property Name="ID_Contract" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Contract_Type" Type="Int32" />
+          <Property Name="ID_Tenure_type" Type="Int32" />
+          <Property Name="ID_Employee" Type="Int32" />
+          <Property Name="ID_Job_Type" Type="Int32" />
+          <Property Name="Bonus" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="HourlyRate" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="MonthlyRate" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NumberAccount" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="ConclusionDate" Type="DateTime" Precision="3" />
+          <Property Name="NumberContract" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Billing_tenure" Relationship="Self.FK_BILLING__RELATIONS_CONTRACT" FromRole="Contract" ToRole="Billing_tenure" />
+          <NavigationProperty Name="Contract_Type" Relationship="Self.FK_CONTRACT_RELATIONS_CONTRACT" FromRole="Contract" ToRole="Contract_Type" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_CONTRACT_RELATIONS_EMPLOYEE" FromRole="Contract" ToRole="Employee" />
+          <NavigationProperty Name="Job_Type" Relationship="Self.FK_CONTRACT_RELATIONS_JOB_TYPE" FromRole="Contract" ToRole="Job_Type" />
+          <NavigationProperty Name="Tenure_type" Relationship="Self.FK_CONTRACT_RELATIONS_TENURE_T" FromRole="Contract" ToRole="Tenure_type" />
+          <NavigationProperty Name="Payment_Details" Relationship="Self.FK_PAYMENT__RELATIONS_CONTRACT" FromRole="Contract" ToRole="Payment_Details" />
+        </EntityType>
+        <EntityType Name="Contract_Type">
+          <Key>
+            <PropertyRef Name="ID_Contract_Type" />
+          </Key>
+          <Property Name="ID_Contract_Type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Contract" Relationship="Self.FK_CONTRACT_RELATIONS_CONTRACT" FromRole="Contract_Type" ToRole="Contract" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID_Employee" />
+          </Key>
+          <Property Name="ID_Employee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Login" Type="Int32" />
+          <Property Name="ID_EmployeeType" Type="Int32" />
+          <Property Name="Number_Employee" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="PESEL" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CountryRegistration" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PostalCodeRegistration" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CityRegistration" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StreetRegistration" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BuildingNumberRegistration" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HousingNumberRegistration" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CountryResidence" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCodeResidence" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="CityResidence" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="StreetResidence" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="BuildingNumberResidence" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="HouseNumberResidence" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contract" Relationship="Self.FK_CONTRACT_RELATIONS_EMPLOYEE" FromRole="Employee" ToRole="Contract" />
+          <NavigationProperty Name="Employee_Type" Relationship="Self.FK_EMPLOYEE_RELATIONS_EMPLOYEE" FromRole="Employee" ToRole="Employee_Type" />
+          <NavigationProperty Name="Login" Relationship="Self.FK_EMPLOYEE_RELATIONS_LOGIN" FromRole="Employee" ToRole="Login" />
+          <NavigationProperty Name="Visit" Relationship="Self.FK_VISIT_RELATIONS_EMPLOYEE" FromRole="Employee" ToRole="Visit" />
+        </EntityType>
+        <EntityType Name="Employee_Type">
+          <Key>
+            <PropertyRef Name="ID_EmployeeType" />
+          </Key>
+          <Property Name="ID_EmployeeType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_EMPLOYEE_RELATIONS_EMPLOYEE" FromRole="Employee_Type" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Job_Type">
+          <Key>
+            <PropertyRef Name="ID_Job_Type" />
+          </Key>
+          <Property Name="ID_Job_Type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Contract" Relationship="Self.FK_CONTRACT_RELATIONS_JOB_TYPE" FromRole="Job_Type" ToRole="Contract" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="ID_Login" />
+          </Key>
+          <Property Name="ID_Login" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_EMPLOYEE_RELATIONS_LOGIN" FromRole="Login" ToRole="Employee" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_PATIENT_RELATIONS_LOGIN" FromRole="Login" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Medic_details">
+          <Key>
+            <PropertyRef Name="Id_Details" />
+          </Key>
+          <Property Name="Id_Details" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Medical_examination" Type="Int32" />
+          <Property Name="Result_1" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Name="Result_2" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Name="Result_3" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Name="Result_4" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Name="Recommendations" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Medical_examination" Relationship="Self.FK_MEDIC_DE_RELATIONS_MEDICAL_" FromRole="Medic_details" ToRole="Medical_examination" />
+        </EntityType>
+        <EntityType Name="Medical_examination">
+          <Key>
+            <PropertyRef Name="ID_Medical_examination" />
+          </Key>
+          <Property Name="ID_Medical_examination" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Patient" Type="Int32" />
+          <Property Name="ID_medical_examination_type" Type="Int32" />
+          <Property Name="NumberReferral" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="IssueDate" Type="DateTime" Precision="3" />
+          <Property Name="DateEpiration" Type="DateTime" Precision="3" />
+          <Property Name="NumberMedicalExamination" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Medic_details" Relationship="Self.FK_MEDIC_DE_RELATIONS_MEDICAL_" FromRole="Medical_examination" ToRole="Medic_details" />
+          <NavigationProperty Name="Medical_examination_type" Relationship="Self.FK_MEDICAL__RELATIONS_MEDICAL_" FromRole="Medical_examination" ToRole="Medical_examination_type" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_MEDICAL__RELATIONS_PATIENT" FromRole="Medical_examination" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Medical_examination_type">
+          <Key>
+            <PropertyRef Name="ID_medical_examination_type" />
+          </Key>
+          <Property Name="ID_medical_examination_type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Medical_examination" Relationship="Self.FK_MEDICAL__RELATIONS_MEDICAL_" FromRole="Medical_examination_type" ToRole="Medical_examination" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="ID_Patient" />
+          </Key>
+          <Property Name="ID_Patient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Login" Type="Int32" />
+          <Property Name="Number_Patient" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="PESEL" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CountryRegistration" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PostalCodeRegistration" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CityRegistration" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StreetRegistration" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BuildingNumberRegistration" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HousingNumberRegistration" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CountryResidence" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCodeResidence" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="CityResidence" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="StreetResidence" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="BuildingNumberResidence" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="HouseNumberResidence" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Login" Relationship="Self.FK_PATIENT_RELATIONS_LOGIN" FromRole="Patient" ToRole="Login" />
+          <NavigationProperty Name="Medical_examination" Relationship="Self.FK_MEDICAL__RELATIONS_PATIENT" FromRole="Patient" ToRole="Medical_examination" />
+          <NavigationProperty Name="Prescription" Relationship="Self.FK_PRESCRIP_RELATIONS_PATIENT" FromRole="Patient" ToRole="Prescription" />
+          <NavigationProperty Name="Referral" Relationship="Self.FK_REFERRAL_RELATIONS_PATIENT" FromRole="Patient" ToRole="Referral" />
+          <NavigationProperty Name="Visit" Relationship="Self.FK_VISIT_RELATIONS_PATIENT" FromRole="Patient" ToRole="Visit" />
+        </EntityType>
+        <EntityType Name="Payment_Details">
+          <Key>
+            <PropertyRef Name="ID_Payment_Details" />
+          </Key>
+          <Property Name="ID_Payment_Details" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Contract" Type="Int32" />
+          <Property Name="ID_Billing_tenure" Type="Int32" />
+          <Property Name="Payment_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Payment_due_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Total" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentDetailsNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contract" Relationship="Self.FK_PAYMENT__RELATIONS_CONTRACT" FromRole="Payment_Details" ToRole="Contract" />
+        </EntityType>
+        <EntityType Name="Prescription">
+          <Key>
+            <PropertyRef Name="ID_Prescription" />
+          </Key>
+          <Property Name="ID_Prescription" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Visit" Type="Int32" />
+          <Property Name="ID_Patient" Type="Int32" />
+          <Property Name="NumberPrescription" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Medication_1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Medication_2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Medication_3" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Medication_4" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Medication_5" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Medication_6" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Medication_7" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="IssueDate" Type="DateTime" Precision="3" />
+          <Property Name="PrescriptionCode" Type="Int32" />
+          <Property Name="Dose_1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Dose_2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Dose_3" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Dose_4" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Dose_5" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Dose_6" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Dose_7" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_PRESCRIP_RELATIONS_PATIENT" FromRole="Prescription" ToRole="Patient" />
+          <NavigationProperty Name="Visit" Relationship="Self.FK_PRESCRIP_RELATIONS_VISIT" FromRole="Prescription" ToRole="Visit" />
+        </EntityType>
+        <EntityType Name="Referral">
+          <Key>
+            <PropertyRef Name="ID_Referral" />
+          </Key>
+          <Property Name="ID_Referral" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Patient" Type="Int32" />
+          <Property Name="ID_medical_examination_type" Type="Int32" />
+          <Property Name="Referral_number" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Issue_Date" Type="DateTime" Precision="3" />
+          <Property Name="ReferralCod" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_REFERRAL_RELATIONS_PATIENT" FromRole="Referral" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Status_cod">
+          <Key>
+            <PropertyRef Name="IdStatus" />
+          </Key>
+          <Property Name="IdStatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusName" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Visit" Relationship="Self.FK_VISIT_RELATIONS_STATUS_C" FromRole="Status_cod" ToRole="Visit" />
+        </EntityType>
+        <EntityType Name="Tenure_type">
+          <Key>
+            <PropertyRef Name="ID_Tenure_type" />
+          </Key>
+          <Property Name="ID_Tenure_type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Contract" Relationship="Self.FK_CONTRACT_RELATIONS_TENURE_T" FromRole="Tenure_type" ToRole="Contract" />
+        </EntityType>
+        <EntityType Name="Title_Type">
+          <Key>
+            <PropertyRef Name="ID_Tytle_type" />
+          </Key>
+          <Property Name="ID_Tytle_type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Visit">
+          <Key>
+            <PropertyRef Name="ID_Visit" />
+          </Key>
+          <Property Name="ID_Visit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Patient" Type="Int32" />
+          <Property Name="ID_Visit_type" Type="Int32" />
+          <Property Name="IdStatus" Type="Int32" />
+          <Property Name="ID_Employee" Type="Int32" />
+          <Property Name="Registration_date" Type="DateTime" Precision="3" />
+          <Property Name="Comments" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Date_hour_visit_start" Type="DateTime" Precision="3" />
+          <Property Name="Data_hour_visit_end" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="VisitNumber" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Activities_performed" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="Recomendations" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="General_information" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="Dosage_of_medication" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="Comments2" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_VISIT_RELATIONS_EMPLOYEE" FromRole="Visit" ToRole="Employee" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_VISIT_RELATIONS_PATIENT" FromRole="Visit" ToRole="Patient" />
+          <NavigationProperty Name="Prescription" Relationship="Self.FK_PRESCRIP_RELATIONS_VISIT" FromRole="Visit" ToRole="Prescription" />
+          <NavigationProperty Name="Status_cod" Relationship="Self.FK_VISIT_RELATIONS_STATUS_C" FromRole="Visit" ToRole="Status_cod" />
+          <NavigationProperty Name="Visit_type" Relationship="Self.FK_VISIT_RELATIONS_VISIT_TY" FromRole="Visit" ToRole="Visit_type" />
+        </EntityType>
+        <EntityType Name="Visit_type">
+          <Key>
+            <PropertyRef Name="ID_Visit_type" />
+          </Key>
+          <Property Name="ID_Visit_type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Visit" Relationship="Self.FK_VISIT_RELATIONS_VISIT_TY" FromRole="Visit_type" ToRole="Visit" />
+        </EntityType>
+        <Association Name="FK_BILLING__RELATIONS_CONTRACT">
+          <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
+          <End Role="Billing_tenure" Type="Self.Billing_tenure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="ID_Contract" />
+            </Principal>
+            <Dependent Role="Billing_tenure">
+              <PropertyRef Name="ID_Contract" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTRACT_RELATIONS_CONTRACT">
+          <End Role="Contract_Type" Type="Self.Contract_Type" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract_Type">
+              <PropertyRef Name="ID_Contract_Type" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="ID_Contract_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTRACT_RELATIONS_EMPLOYEE">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Employee" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="ID_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTRACT_RELATIONS_JOB_TYPE">
+          <End Role="Job_Type" Type="Self.Job_Type" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_Type">
+              <PropertyRef Name="ID_Job_Type" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="ID_Job_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTRACT_RELATIONS_TENURE_T">
+          <End Role="Tenure_type" Type="Self.Tenure_type" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tenure_type">
+              <PropertyRef Name="ID_Tenure_type" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="ID_Tenure_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAYMENT__RELATIONS_CONTRACT">
+          <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
+          <End Role="Payment_Details" Type="Self.Payment_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="ID_Contract" />
+            </Principal>
+            <Dependent Role="Payment_Details">
+              <PropertyRef Name="ID_Contract" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLOYEE_RELATIONS_EMPLOYEE">
+          <End Role="Employee_Type" Type="Self.Employee_Type" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_Type">
+              <PropertyRef Name="ID_EmployeeType" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="ID_EmployeeType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLOYEE_RELATIONS_LOGIN">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="ID_Login" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="ID_Login" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VISIT_RELATIONS_EMPLOYEE">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Visit" Type="Self.Visit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Employee" />
+            </Principal>
+            <Dependent Role="Visit">
+              <PropertyRef Name="ID_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PATIENT_RELATIONS_LOGIN">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="ID_Login" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="ID_Login" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MEDIC_DE_RELATIONS_MEDICAL_">
+          <End Role="Medical_examination" Type="Self.Medical_examination" Multiplicity="0..1" />
+          <End Role="Medic_details" Type="Self.Medic_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medical_examination">
+              <PropertyRef Name="ID_Medical_examination" />
+            </Principal>
+            <Dependent Role="Medic_details">
+              <PropertyRef Name="ID_Medical_examination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MEDICAL__RELATIONS_MEDICAL_">
+          <End Role="Medical_examination_type" Type="Self.Medical_examination_type" Multiplicity="0..1" />
+          <End Role="Medical_examination" Type="Self.Medical_examination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medical_examination_type">
+              <PropertyRef Name="ID_medical_examination_type" />
+            </Principal>
+            <Dependent Role="Medical_examination">
+              <PropertyRef Name="ID_medical_examination_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MEDICAL__RELATIONS_PATIENT">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Medical_examination" Type="Self.Medical_examination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID_Patient" />
+            </Principal>
+            <Dependent Role="Medical_examination">
+              <PropertyRef Name="ID_Patient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRESCRIP_RELATIONS_PATIENT">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID_Patient" />
+            </Principal>
+            <Dependent Role="Prescription">
+              <PropertyRef Name="ID_Patient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REFERRAL_RELATIONS_PATIENT">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Referral" Type="Self.Referral" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID_Patient" />
+            </Principal>
+            <Dependent Role="Referral">
+              <PropertyRef Name="ID_Patient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VISIT_RELATIONS_PATIENT">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Visit" Type="Self.Visit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID_Patient" />
+            </Principal>
+            <Dependent Role="Visit">
+              <PropertyRef Name="ID_Patient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRESCRIP_RELATIONS_VISIT">
+          <End Role="Visit" Type="Self.Visit" Multiplicity="0..1" />
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visit">
+              <PropertyRef Name="ID_Visit" />
+            </Principal>
+            <Dependent Role="Prescription">
+              <PropertyRef Name="ID_Visit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VISIT_RELATIONS_STATUS_C">
+          <End Role="Status_cod" Type="Self.Status_cod" Multiplicity="0..1" />
+          <End Role="Visit" Type="Self.Visit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status_cod">
+              <PropertyRef Name="IdStatus" />
+            </Principal>
+            <Dependent Role="Visit">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VISIT_RELATIONS_VISIT_TY">
+          <End Role="Visit_type" Type="Self.Visit_type" Multiplicity="0..1" />
+          <End Role="Visit" Type="Self.Visit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visit_type">
+              <PropertyRef Name="ID_Visit_type" />
+            </Principal>
+            <Dependent Role="Visit">
+              <PropertyRef Name="ID_Visit_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="iMedicalDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Billing_tenure" EntityType="Self.Billing_tenure" />
+          <EntitySet Name="Contract" EntityType="Self.Contract" />
+          <EntitySet Name="Contract_Type" EntityType="Self.Contract_Type" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="Employee_Type" EntityType="Self.Employee_Type" />
+          <EntitySet Name="Job_Type" EntityType="Self.Job_Type" />
+          <EntitySet Name="Login" EntityType="Self.Login" />
+          <EntitySet Name="Medic_details" EntityType="Self.Medic_details" />
+          <EntitySet Name="Medical_examination" EntityType="Self.Medical_examination" />
+          <EntitySet Name="Medical_examination_type" EntityType="Self.Medical_examination_type" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" />
+          <EntitySet Name="Payment_Details" EntityType="Self.Payment_Details" />
+          <EntitySet Name="Prescription" EntityType="Self.Prescription" />
+          <EntitySet Name="Referral" EntityType="Self.Referral" />
+          <EntitySet Name="Status_cod" EntityType="Self.Status_cod" />
+          <EntitySet Name="Tenure_type" EntityType="Self.Tenure_type" />
+          <EntitySet Name="Title_Type" EntityType="Self.Title_Type" />
+          <EntitySet Name="Visit" EntityType="Self.Visit" />
+          <EntitySet Name="Visit_type" EntityType="Self.Visit_type" />
+          <AssociationSet Name="FK_BILLING__RELATIONS_CONTRACT" Association="Self.FK_BILLING__RELATIONS_CONTRACT">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="Billing_tenure" EntitySet="Billing_tenure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTRACT_RELATIONS_CONTRACT" Association="Self.FK_CONTRACT_RELATIONS_CONTRACT">
+            <End Role="Contract_Type" EntitySet="Contract_Type" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTRACT_RELATIONS_EMPLOYEE" Association="Self.FK_CONTRACT_RELATIONS_EMPLOYEE">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTRACT_RELATIONS_JOB_TYPE" Association="Self.FK_CONTRACT_RELATIONS_JOB_TYPE">
+            <End Role="Job_Type" EntitySet="Job_Type" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTRACT_RELATIONS_TENURE_T" Association="Self.FK_CONTRACT_RELATIONS_TENURE_T">
+            <End Role="Tenure_type" EntitySet="Tenure_type" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAYMENT__RELATIONS_CONTRACT" Association="Self.FK_PAYMENT__RELATIONS_CONTRACT">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="Payment_Details" EntitySet="Payment_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLOYEE_RELATIONS_EMPLOYEE" Association="Self.FK_EMPLOYEE_RELATIONS_EMPLOYEE">
+            <End Role="Employee_Type" EntitySet="Employee_Type" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLOYEE_RELATIONS_LOGIN" Association="Self.FK_EMPLOYEE_RELATIONS_LOGIN">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISIT_RELATIONS_EMPLOYEE" Association="Self.FK_VISIT_RELATIONS_EMPLOYEE">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Visit" EntitySet="Visit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PATIENT_RELATIONS_LOGIN" Association="Self.FK_PATIENT_RELATIONS_LOGIN">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MEDIC_DE_RELATIONS_MEDICAL_" Association="Self.FK_MEDIC_DE_RELATIONS_MEDICAL_">
+            <End Role="Medical_examination" EntitySet="Medical_examination" />
+            <End Role="Medic_details" EntitySet="Medic_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MEDICAL__RELATIONS_MEDICAL_" Association="Self.FK_MEDICAL__RELATIONS_MEDICAL_">
+            <End Role="Medical_examination_type" EntitySet="Medical_examination_type" />
+            <End Role="Medical_examination" EntitySet="Medical_examination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MEDICAL__RELATIONS_PATIENT" Association="Self.FK_MEDICAL__RELATIONS_PATIENT">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Medical_examination" EntitySet="Medical_examination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRESCRIP_RELATIONS_PATIENT" Association="Self.FK_PRESCRIP_RELATIONS_PATIENT">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Prescription" EntitySet="Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REFERRAL_RELATIONS_PATIENT" Association="Self.FK_REFERRAL_RELATIONS_PATIENT">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Referral" EntitySet="Referral" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISIT_RELATIONS_PATIENT" Association="Self.FK_VISIT_RELATIONS_PATIENT">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Visit" EntitySet="Visit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRESCRIP_RELATIONS_VISIT" Association="Self.FK_PRESCRIP_RELATIONS_VISIT">
+            <End Role="Visit" EntitySet="Visit" />
+            <End Role="Prescription" EntitySet="Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISIT_RELATIONS_STATUS_C" Association="Self.FK_VISIT_RELATIONS_STATUS_C">
+            <End Role="Status_cod" EntitySet="Status_cod" />
+            <End Role="Visit" EntitySet="Visit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISIT_RELATIONS_VISIT_TY" Association="Self.FK_VISIT_RELATIONS_VISIT_TY">
+            <End Role="Visit_type" EntitySet="Visit_type" />
+            <End Role="Visit" EntitySet="Visit" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="iMedicalModelStoreContainer" CdmEntityContainer="iMedicalDbContext">
+          <EntitySetMapping Name="Billing_tenure">
+            <EntityTypeMapping TypeName="iMedicalModel.Billing_tenure">
+              <MappingFragment StoreEntitySet="Billing_tenure">
+                <ScalarProperty Name="ID_Biling_tenure" ColumnName="ID_Biling_tenure" />
+                <ScalarProperty Name="ID_Contract" ColumnName="ID_Contract" />
+                <ScalarProperty Name="Insertion_date" ColumnName="Insertion_date" />
+                <ScalarProperty Name="Date_from" ColumnName="Date_from" />
+                <ScalarProperty Name="Date_to" ColumnName="Date_to" />
+                <ScalarProperty Name="Hours_number" ColumnName="Hours_number" />
+                <ScalarProperty Name="hours_extra_number" ColumnName="hours_extra_number" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="treatments_paid" ColumnName="treatments_paid" />
+                <ScalarProperty Name="treatments_reimbursed" ColumnName="treatments_reimbursed" />
+                <ScalarProperty Name="visits_paid" ColumnName="visits_paid" />
+                <ScalarProperty Name="visits_reimbursed" ColumnName="visits_reimbursed" />
+                <ScalarProperty Name="NumberBilling" ColumnName="NumberBilling" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contract">
+            <EntityTypeMapping TypeName="iMedicalModel.Contract">
+              <MappingFragment StoreEntitySet="Contract">
+                <ScalarProperty Name="ID_Contract" ColumnName="ID_Contract" />
+                <ScalarProperty Name="ID_Contract_Type" ColumnName="ID_Contract_Type" />
+                <ScalarProperty Name="ID_Tenure_type" ColumnName="ID_Tenure_type" />
+                <ScalarProperty Name="ID_Employee" ColumnName="ID_Employee" />
+                <ScalarProperty Name="ID_Job_Type" ColumnName="ID_Job_Type" />
+                <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+                <ScalarProperty Name="HourlyRate" ColumnName="HourlyRate" />
+                <ScalarProperty Name="MonthlyRate" ColumnName="MonthlyRate" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="NumberAccount" ColumnName="NumberAccount" />
+                <ScalarProperty Name="ConclusionDate" ColumnName="ConclusionDate" />
+                <ScalarProperty Name="NumberContract" ColumnName="NumberContract" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contract_Type">
+            <EntityTypeMapping TypeName="iMedicalModel.Contract_Type">
+              <MappingFragment StoreEntitySet="Contract_Type">
+                <ScalarProperty Name="ID_Contract_Type" ColumnName="ID_Contract_Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="iMedicalModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="ID_Employee" ColumnName="ID_Employee" />
+                <ScalarProperty Name="ID_Login" ColumnName="ID_Login" />
+                <ScalarProperty Name="ID_EmployeeType" ColumnName="ID_EmployeeType" />
+                <ScalarProperty Name="Number_Employee" ColumnName="Number_Employee" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="CountryRegistration" ColumnName="CountryRegistration" />
+                <ScalarProperty Name="PostalCodeRegistration" ColumnName="PostalCodeRegistration" />
+                <ScalarProperty Name="CityRegistration" ColumnName="CityRegistration" />
+                <ScalarProperty Name="StreetRegistration" ColumnName="StreetRegistration" />
+                <ScalarProperty Name="BuildingNumberRegistration" ColumnName="BuildingNumberRegistration" />
+                <ScalarProperty Name="HousingNumberRegistration" ColumnName="HousingNumberRegistration" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="CountryResidence" ColumnName="CountryResidence" />
+                <ScalarProperty Name="PostalCodeResidence" ColumnName="PostalCodeResidence" />
+                <ScalarProperty Name="CityResidence" ColumnName="CityResidence" />
+                <ScalarProperty Name="StreetResidence" ColumnName="StreetResidence" />
+                <ScalarProperty Name="BuildingNumberResidence" ColumnName="BuildingNumberResidence" />
+                <ScalarProperty Name="HouseNumberResidence" ColumnName="HouseNumberResidence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Type">
+            <EntityTypeMapping TypeName="iMedicalModel.Employee_Type">
+              <MappingFragment StoreEntitySet="Employee_Type">
+                <ScalarProperty Name="ID_EmployeeType" ColumnName="ID_EmployeeType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Job_Type">
+            <EntityTypeMapping TypeName="iMedicalModel.Job_Type">
+              <MappingFragment StoreEntitySet="Job_Type">
+                <ScalarProperty Name="ID_Job_Type" ColumnName="ID_Job_Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login">
+            <EntityTypeMapping TypeName="iMedicalModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="ID_Login" ColumnName="ID_Login" />
+                <ScalarProperty Name="Login1" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medic_details">
+            <EntityTypeMapping TypeName="iMedicalModel.Medic_details">
+              <MappingFragment StoreEntitySet="Medic_details">
+                <ScalarProperty Name="Id_Details" ColumnName="Id_Details" />
+                <ScalarProperty Name="ID_Medical_examination" ColumnName="ID_Medical_examination" />
+                <ScalarProperty Name="Result_1" ColumnName="Result_1" />
+                <ScalarProperty Name="Result_2" ColumnName="Result_2" />
+                <ScalarProperty Name="Result_3" ColumnName="Result_3" />
+                <ScalarProperty Name="Result_4" ColumnName="Result_4" />
+                <ScalarProperty Name="Recommendations" ColumnName="Recommendations" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medical_examination">
+            <EntityTypeMapping TypeName="iMedicalModel.Medical_examination">
+              <MappingFragment StoreEntitySet="Medical_examination">
+                <ScalarProperty Name="ID_Medical_examination" ColumnName="ID_Medical_examination" />
+                <ScalarProperty Name="ID_Patient" ColumnName="ID_Patient" />
+                <ScalarProperty Name="ID_medical_examination_type" ColumnName="ID_medical_examination_type" />
+                <ScalarProperty Name="NumberReferral" ColumnName="NumberReferral" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="DateEpiration" ColumnName="DateEpiration" />
+                <ScalarProperty Name="NumberMedicalExamination" ColumnName="NumberMedicalExamination" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medical_examination_type">
+            <EntityTypeMapping TypeName="iMedicalModel.Medical_examination_type">
+              <MappingFragment StoreEntitySet="Medical_examination_type">
+                <ScalarProperty Name="ID_medical_examination_type" ColumnName="ID_medical_examination_type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patient">
+            <EntityTypeMapping TypeName="iMedicalModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="ID_Patient" ColumnName="ID_Patient" />
+                <ScalarProperty Name="ID_Login" ColumnName="ID_Login" />
+                <ScalarProperty Name="Number_Patient" ColumnName="Number_Patient" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="CountryRegistration" ColumnName="CountryRegistration" />
+                <ScalarProperty Name="PostalCodeRegistration" ColumnName="PostalCodeRegistration" />
+                <ScalarProperty Name="CityRegistration" ColumnName="CityRegistration" />
+                <ScalarProperty Name="StreetRegistration" ColumnName="StreetRegistration" />
+                <ScalarProperty Name="BuildingNumberRegistration" ColumnName="BuildingNumberRegistration" />
+                <ScalarProperty Name="HousingNumberRegistration" ColumnName="HousingNumberRegistration" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="CountryResidence" ColumnName="CountryResidence" />
+                <ScalarProperty Name="PostalCodeResidence" ColumnName="PostalCodeResidence" />
+                <ScalarProperty Name="CityResidence" ColumnName="CityResidence" />
+                <ScalarProperty Name="StreetResidence" ColumnName="StreetResidence" />
+                <ScalarProperty Name="BuildingNumberResidence" ColumnName="BuildingNumberResidence" />
+                <ScalarProperty Name="HouseNumberResidence" ColumnName="HouseNumberResidence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payment_Details">
+            <EntityTypeMapping TypeName="iMedicalModel.Payment_Details">
+              <MappingFragment StoreEntitySet="Payment_Details">
+                <ScalarProperty Name="ID_Payment_Details" ColumnName="ID_Payment_Details" />
+                <ScalarProperty Name="ID_Contract" ColumnName="ID_Contract" />
+                <ScalarProperty Name="ID_Billing_tenure" ColumnName="ID_Billing_tenure" />
+                <ScalarProperty Name="Payment_date" ColumnName="Payment_date" />
+                <ScalarProperty Name="Payment_due_date" ColumnName="Payment_due_date" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="PaymentDetailsNumber" ColumnName="PaymentDetailsNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prescription">
+            <EntityTypeMapping TypeName="iMedicalModel.Prescription">
+              <MappingFragment StoreEntitySet="Prescription">
+                <ScalarProperty Name="ID_Prescription" ColumnName="ID_Prescription" />
+                <ScalarProperty Name="ID_Visit" ColumnName="ID_Visit" />
+                <ScalarProperty Name="ID_Patient" ColumnName="ID_Patient" />
+                <ScalarProperty Name="NumberPrescription" ColumnName="NumberPrescription" />
+                <ScalarProperty Name="Medication_1" ColumnName="Medication_1" />
+                <ScalarProperty Name="Medication_2" ColumnName="Medication_2" />
+                <ScalarProperty Name="Medication_3" ColumnName="Medication_3" />
+                <ScalarProperty Name="Medication_4" ColumnName="Medication_4" />
+                <ScalarProperty Name="Medication_5" ColumnName="Medication_5" />
+                <ScalarProperty Name="Medication_6" ColumnName="Medication_6" />
+                <ScalarProperty Name="Medication_7" ColumnName="Medication_7" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="PrescriptionCode" ColumnName="PrescriptionCode" />
+                <ScalarProperty Name="Dose_1" ColumnName="Dose_1" />
+                <ScalarProperty Name="Dose_2" ColumnName="Dose_2" />
+                <ScalarProperty Name="Dose_3" ColumnName="Dose_3" />
+                <ScalarProperty Name="Dose_4" ColumnName="Dose_4" />
+                <ScalarProperty Name="Dose_5" ColumnName="Dose_5" />
+                <ScalarProperty Name="Dose_6" ColumnName="Dose_6" />
+                <ScalarProperty Name="Dose_7" ColumnName="Dose_7" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Referral">
+            <EntityTypeMapping TypeName="iMedicalModel.Referral">
+              <MappingFragment StoreEntitySet="Referral">
+                <ScalarProperty Name="ID_Referral" ColumnName="ID_Referral" />
+                <ScalarProperty Name="ID_Patient" ColumnName="ID_Patient" />
+                <ScalarProperty Name="ID_medical_examination_type" ColumnName="ID_medical_examination_type" />
+                <ScalarProperty Name="Referral_number" ColumnName="Referral_number" />
+                <ScalarProperty Name="Issue_Date" ColumnName="Issue_Date" />
+                <ScalarProperty Name="ReferralCod" ColumnName="ReferralCod" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status_cod">
+            <EntityTypeMapping TypeName="iMedicalModel.Status_cod">
+              <MappingFragment StoreEntitySet="Status_cod">
+                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tenure_type">
+            <EntityTypeMapping TypeName="iMedicalModel.Tenure_type">
+              <MappingFragment StoreEntitySet="Tenure_type">
+                <ScalarProperty Name="ID_Tenure_type" ColumnName="ID_Tenure_type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Title_Type">
+            <EntityTypeMapping TypeName="iMedicalModel.Title_Type">
+              <MappingFragment StoreEntitySet="Title_Type">
+                <ScalarProperty Name="ID_Tytle_type" ColumnName="ID_Tytle_type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visit">
+            <EntityTypeMapping TypeName="iMedicalModel.Visit">
+              <MappingFragment StoreEntitySet="Visit">
+                <ScalarProperty Name="ID_Visit" ColumnName="ID_Visit" />
+                <ScalarProperty Name="ID_Patient" ColumnName="ID_Patient" />
+                <ScalarProperty Name="ID_Visit_type" ColumnName="ID_Visit_type" />
+                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+                <ScalarProperty Name="ID_Employee" ColumnName="ID_Employee" />
+                <ScalarProperty Name="Registration_date" ColumnName="Registration_date" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Date_hour_visit_start" ColumnName="Date_hour_visit_start" />
+                <ScalarProperty Name="Data_hour_visit_end" ColumnName="Data_hour_visit_end" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="VisitNumber" ColumnName="VisitNumber" />
+                <ScalarProperty Name="Activities_performed" ColumnName="Activities_performed" />
+                <ScalarProperty Name="Recomendations" ColumnName="Recomendations" />
+                <ScalarProperty Name="General_information" ColumnName="General_information" />
+                <ScalarProperty Name="Dosage_of_medication" ColumnName="Dosage_of_medication" />
+                <ScalarProperty Name="Comments2" ColumnName="Comments2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visit_type">
+            <EntityTypeMapping TypeName="iMedicalModel.Visit_type">
+              <MappingFragment StoreEntitySet="Visit_type">
+                <ScalarProperty Name="ID_Visit_type" ColumnName="ID_Visit_type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

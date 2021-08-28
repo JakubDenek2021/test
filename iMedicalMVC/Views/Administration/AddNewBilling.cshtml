@@ -1,0 +1,100 @@
+﻿@model iMedicalMVC.ViewModel.Employee.CreateNewBillingViewModel
+
+@{
+    ViewBag.Title = "AddNewBilling";
+    Layout = "~/Views/Shared/_AdministrationrLayout.cshtml";
+}
+<link href="~/Content/css/style.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="container" style="margin-top: 150px">
+        <h1 class="well">Nowe rozliczenie kontraktu</h1>
+        <div class="col-lg-12 well">
+            <div class="row">
+                <form>
+                    <div class="col-sm-12">
+
+                        <div class="row">
+                            <h3 style="padding: 20px 20px;"><strong>Dane szczegółowe</strong></h3>
+                            <div class="col-sm-6 form-group">
+                                <label>Kontrakt</label>
+                                @Html.DropDownListFor(model => model.ContractListId, Model.ContractList, new { @class = "form-control input_text" })
+                                @Html.ValidationMessageFor(model => model.ContractListId, "", new { @class = "text-danger" })
+                            </div>
+                            <h4 style="padding: 20px 20px;"><strong>Okres rozliczenia</strong></h4>
+                            <div class="col-sm-6 form-group">
+                                <label>Data początkowa</label>
+                                @Html.EditorFor(model => model.Date_from, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Date_from, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Data końcowa</label>
+                                @Html.EditorFor(model => model.Date_to, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Date_to, "", new { @class = "text-danger" })
+                            </div>
+                            <h4 style="padding: 20px 20px;"><strong>Rozliczenie godzinowe</strong></h4>
+                            <div class="col-sm-6 form-group">
+                                <label>Liczba godzin</label>
+                                @Html.EditorFor(model => model.Hours_number, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Hours_number, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Liczba nadgodzin</label>
+                                @Html.EditorFor(model => model.hours_extra_number, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.hours_extra_number, "", new { @class = "text-danger" })
+                            </div>
+                            <h4 style="padding: 20px 20px;"><strong>Rozliczenie zabiegów / badań</strong></h4>
+                            <div class="col-sm-6 form-group">
+                                <label>Liczba zabiegów odpłatnych</label>
+                                @Html.EditorFor(model => model.treatments_paid, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.treatments_paid, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Liczba zabiegów refundowanych NFZ</label>
+                                @Html.EditorFor(model => model.treatments_reimbursed, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.treatments_reimbursed, "", new { @class = "text-danger" })
+                            </div>
+                            <h4 style="padding: 20px 20px;"><strong>Rozliczenie wizytowe</strong></h4>
+                            <div class="col-sm-6 form-group">
+                                <label>Liczba wizyt odpłatnych</label>
+                                @Html.EditorFor(model => model.visits_paid, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.visits_paid, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Liczba wizyt refundowanych NFZ</label>
+                                @Html.EditorFor(model => model.visits_reimbursed, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.visits_reimbursed, "", new { @class = "text-danger" })
+                            </div>
+                            <h4 style="padding: 20px 20px;"><strong>Inne</strong></h4>
+                            <div class="col-sm-6 form-group">
+                                <label>Inne refundowane / odpłatne czynności</label>
+                                @Html.EditorFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Komentarz</label>
+                                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                            </div>
+
+
+
+                        </div>
+
+                        <button type="submit" class="btn btn-lg btn-info">Zapisz</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+}

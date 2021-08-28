@@ -1,0 +1,52 @@
+﻿@model IEnumerable<iMedicalMVC.ViewModel.Employee.ShowAllVisitViewModel>
+
+@{
+    ViewBag.Title = "ShowAllVisit";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/Content/css/table.css" rel="stylesheet" />
+
+<section id="tabs" class="project-tab" style="margin-top: 100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <table class="table" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center;">Nr wizyty</th>
+                                    <th style="text-align:center;">Data rejestracji</th>
+                                    <th style="text-align:center;">Data wizyty</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td style="text-align:center;">@Html.DisplayFor(modelItem => item.VisitNumber)</td>
+                                        <td style="text-align:center;">@Html.DisplayFor(modelItem => item.RegistrationDate)</td>
+                                        <td style="text-align:center;">@Html.DisplayFor(modelItem => item.DateVisit)</td>
+                                        <td><button class="btn-sm btn-info"><a href='@Url.Action("EditVisit", "Doctor", new { visitId = item.IdVisit }, null)' style="color: white; ">Edytuj</a></button></td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+

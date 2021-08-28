@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="04712c391d2049bc90473be4965e998b" Name="Diagram1">
+        <EntityTypeShape EntityType="iMedicalModel.Billing_tenure" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Contract" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Contract_Type" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Employee" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Employee_Type" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Job_Type" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Login" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Medic_details" Width="1.5" PointX="7.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Medical_examination" Width="1.5" PointX="5.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Medical_examination_type" Width="1.5" PointX="3" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Patient" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Payment_Details" Width="1.5" PointX="7.5" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Prescription" Width="1.5" PointX="10.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Referral" Width="1.5" PointX="5.25" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Status_cod" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Tenure_type" Width="1.5" PointX="3" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Title_Type" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Visit" Width="1.5" PointX="8.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="iMedicalModel.Visit_type" Width="1.5" PointX="6" PointY="26.25" IsExpanded="true" />
+        <AssociationConnector Association="iMedicalModel.FK_BILLING__RELATIONS_CONTRACT" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_CONTRACT_RELATIONS_CONTRACT" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_CONTRACT_RELATIONS_EMPLOYEE" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_CONTRACT_RELATIONS_JOB_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_CONTRACT_RELATIONS_TENURE_T" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_PAYMENT__RELATIONS_CONTRACT" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_EMPLOYEE_RELATIONS_EMPLOYEE" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_EMPLOYEE_RELATIONS_LOGIN" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_VISIT_RELATIONS_EMPLOYEE" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_PATIENT_RELATIONS_LOGIN" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_MEDIC_DE_RELATIONS_MEDICAL_" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_MEDICAL__RELATIONS_MEDICAL_" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_MEDICAL__RELATIONS_PATIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_PRESCRIP_RELATIONS_PATIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_REFERRAL_RELATIONS_PATIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_VISIT_RELATIONS_PATIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_PRESCRIP_RELATIONS_VISIT" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_VISIT_RELATIONS_STATUS_C" ManuallyRouted="false" />
+        <AssociationConnector Association="iMedicalModel.FK_VISIT_RELATIONS_VISIT_TY" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

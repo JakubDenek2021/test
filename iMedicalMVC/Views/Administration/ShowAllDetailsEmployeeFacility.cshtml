@@ -1,0 +1,67 @@
+﻿@model iMedicalMVC.ViewModel.Employee.ShowDetailsEmployeeViewModel
+
+@{
+    ViewBag.Title = "ShowAllDetailsEmployeeFacility";
+    Layout = "~/Views/Shared/_AdministrationrLayout.cshtml";
+}
+
+<h2>ShowAllDetailsEmployeeFacility</h2>
+
+<div>
+    <h4>ShowDetailsEmployeeViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetRegistration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetRegistration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseNumberRegistration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseNumberRegistration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,73 @@
+﻿@model iMedicalMVC.ViewModel.Doctor.AddNewVisitDetailsViewModel
+
+@{
+    ViewBag.Title = "AddNewVisitDet";
+    Layout = "~/Views/Shared/_ParamedicalLayout .cshtml";
+}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container" style="margin-top: 150px">
+        <h1 class="well">Przebieg wizyty</h1>
+        <div class="col-lg-12 well">
+            <div class="row">
+                <form>
+                    <div class="col-sm-12">
+
+                        <div class="row">
+
+
+                            <div class="col-sm-6 form-group">
+                                <label>Wizyta</label>
+                                @Html.DropDownListFor(model => model.VisitNumberListId, Model.VisitNumberList, new { @class = "form-control input_text" })
+                                @Html.ValidationMessageFor(model => model.VisitNumberListId, "", new { @class = "text-danger" })
+                            </div>
+
+
+
+                            <h3 style="padding: 20px 20px;"><strong>Dane szczegółowe</strong></h3>
+                            <div class="col-sm-6 form-group">
+                                <label>Przeprowadzone czynności</label>
+                                @Html.EditorFor(model => model.ActivitiesPerformed, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ActivitiesPerformed, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Zalecenia</label>
+                                @Html.EditorFor(model => model.Recomendations, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Recomendations, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Informacje o stanie zdrowia</label>
+                                @Html.EditorFor(model => model.GeneralInfomration, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.GeneralInfomration, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <div class="col-sm-6 form-group">
+                                <label>Dawkowanie leków</label>
+                                @Html.EditorFor(model => model.DoageOfMedication, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DoageOfMedication, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Komentarz do wizyty</label>
+                                @Html.EditorFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-info">Zapisz</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}

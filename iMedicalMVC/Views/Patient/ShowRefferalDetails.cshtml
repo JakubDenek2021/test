@@ -1,0 +1,68 @@
+﻿@model iMedicalMVC.ViewModel.Patient.ShowDetailsRefferalViewModel
+
+@{
+    ViewBag.Title = "ShowRefferalDetails";
+    Layout = "~/Views/Shared/_PatientLayout.cshtml";
+}
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="~/Content/css/ProfileView.css" rel="stylesheet" />
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container" style="margin-top:180px;">
+    <div class="row">
+
+
+
+        <div class="col-md-7 ">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">  <h4>Szczegóły skierowania</h4></div>
+                <div class="panel-body">
+
+                    <div class="box box-info">
+
+                        <div class="box-body">
+                           
+                           
+                          
+
+
+                            <div class="col-sm-5 col-xs-6 tital ">Numer skierowania</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.RefferalNumber)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Data wystawienia</div><div class="col-sm-7">@Html.DisplayFor(model => model.Issue_Date)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Kod NFZ skierowania</div><div class="col-sm-7"> @Html.DisplayFor(model => model.RefferalCode)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Komentarz</div><div class="col-sm-7">@Html.DisplayFor(model => model.Description)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                
+                            <div class="bot-border"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+    $(function () {
+                $('#profile-image1').on('click', function () {
+                    $('#profile-image-upload').click();
+                });
+            });</script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    </div>
+</div>

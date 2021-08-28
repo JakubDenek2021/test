@@ -1,0 +1,1246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D420FE4-3061-4138-A889-576E5281F310}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iMedicalMVC</RootNamespace>
+    <AssemblyName>iMedicalMVC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44348</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DHTMLX, Version=4.0.7282.34360, Culture=neutral, PublicKeyToken=53f24791214eb8ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\DHTMLX.Scheduler.NET.4.0.2\lib\DHTMLX.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdministrationController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\MedicalExaminationTypeController.cs" />
+    <Compile Include="Controllers\ParamedicalController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
+    <Compile Include="Controllers\PriceListController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\TenureTypeController.cs" />
+    <Compile Include="Controllers\TtielTypeController.cs" />
+    <Compile Include="Controllers\SpecializationController.cs" />
+    <Compile Include="Controllers\JobTypeController.cs" />
+    <Compile Include="Controllers\VisitTypeController.cs" />
+    <Compile Include="Controllers\ContractTypeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAO\DoctorDao.cs" />
+    <Compile Include="DAO\EmployeeDao.cs" />
+    <Compile Include="DAO\LoginDao.cs" />
+    <Compile Include="DAO\MedicalExaminationTypeDao.cs" />
+    <Compile Include="DAO\PatientDao.cs" />
+    <Compile Include="DAO\PrescriptionDao.cs" />
+    <Compile Include="DAO\PriceListDao.cs" />
+    <Compile Include="DAO\ProfileDao.cs" />
+    <Compile Include="DAO\RegistrationDao.cs" />
+    <Compile Include="DAO\TenureTypeDao.cs" />
+    <Compile Include="DAO\TitleTypeDao.cs" />
+    <Compile Include="DAO\JobTypeDao.cs" />
+    <Compile Include="DAO\VisitDao.cs" />
+    <Compile Include="DAO\VisitTypeDao.cs" />
+    <Compile Include="DAO\ContractTypeDao.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="Fascade\AccountService.cs" />
+    <Compile Include="Fascade\DoctorService.cs" />
+    <Compile Include="Fascade\EmployeeService.cs" />
+    <Compile Include="Fascade\LoginService.cs" />
+    <Compile Include="Fascade\MedicalExaminationTypeService.cs" />
+    <Compile Include="Fascade\PatientService.cs" />
+    <Compile Include="Fascade\PrescriptionService.cs" />
+    <Compile Include="Fascade\PriceListService.cs" />
+    <Compile Include="Fascade\ProfileService.cs" />
+    <Compile Include="Fascade\RegistrationService.cs" />
+    <Compile Include="Fascade\ScheduleService.cs" />
+    <Compile Include="Fascade\TenureTypeService.cs" />
+    <Compile Include="Fascade\TitleTypeService.cs" />
+    <Compile Include="Fascade\SpecializationTypeService.cs" />
+    <Compile Include="Fascade\JobTypeService.cs" />
+    <Compile Include="Fascade\VisitService.cs" />
+    <Compile Include="Fascade\VisitTypeService.cs" />
+    <Compile Include="Fascade\ContractTypeService.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\SHAHelper.cs" />
+    <Compile Include="Infrastructure\AuthorizeEnumAttribute.cs" />
+    <Compile Include="Infrastructure\SessionContext.cs" />
+    <Compile Include="Interface\ILogin.cs" />
+    <Compile Include="Interface\IPassword.cs" />
+    <Compile Include="Models\Billing_tenure.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contract.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contract_Type.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_Type.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\iMedicalDbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>iMedicalDbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\iMedicalDbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\iMedicalDbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>iMedicalDbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Job_Type.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Login.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Medical_examination.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Medical_examination_type.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Medic_details.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Patient.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payment_Details.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Prescription.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Referral.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Status_cod.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tenure_type.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Title_Type.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Visit.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Visit_type.cs">
+      <DependentUpon>iMedicalDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Account\RegistrationViewModel.cs" />
+    <Compile Include="ViewModel\Account\ShowDetailsProfilePatientViewModel.cs" />
+    <Compile Include="ViewModel\Account\ShowDetailsProfileEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\Doctor\AddNewPrescriptionViewModel.cs" />
+    <Compile Include="ViewModel\Doctor\AddNewVisitDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Doctor\CreateNewReferralViewModel.cs" />
+    <Compile Include="ViewModel\Doctor\DoctorListViewModel.cs" />
+    <Compile Include="ViewModel\Doctor\PatientListViewModel.cs" />
+    <Compile Include="ViewModel\Doctor\ShowAllDoctorContractViewModel.cs" />
+    <Compile Include="ViewModel\Employee\BillingListViewModel.cs" />
+    <Compile Include="ViewModel\Employee\ContractListViewModel.cs" />
+    <Compile Include="ViewModel\Employee\ContractTypeListViewModel.cs" />
+    <Compile Include="ViewModel\Employee\ContractViewModel.cs" />
+    <Compile Include="ViewModel\Employee\CreateMedicalExaminationViewModel.cs" />
+    <Compile Include="ViewModel\Employee\CreateMedicDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Employee\CreateNewBillingViewModel.cs" />
+    <Compile Include="ViewModel\Employee\CreateNewContractViewModel.cs" />
+    <Compile Include="ViewModel\Employee\CreateNewPaymantDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Employee\CreateNewVistViewModel.cs" />
+    <Compile Include="ViewModel\Employee\CreateParamedicalViewModel.cs" />
+    <Compile Include="ViewModel\Employee\EmployeeListViewModel.cs" />
+    <Compile Include="ViewModel\Employee\EmployeeTypeViewModel.cs" />
+    <Compile Include="ViewModel\Employee\EmployeeViewModel.cs" />
+    <Compile Include="ViewModel\Employee\JobTypeListViewModel.cs" />
+    <Compile Include="ViewModel\Employee\MedicalExaminationListViewModel.cs" />
+    <Compile Include="ViewModel\Employee\MedicalExaminationTypeListViewModel.cs" />
+    <Compile Include="ViewModel\Employee\MedicalFacilityTypeListViewModel.cs" />
+    <Compile Include="ViewModel\Employee\RegistrationEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\Employee\ShowAllBillingTenureViewModel.cs" />
+    <Compile Include="ViewModel\Employee\ShowAllDetailsEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\Employee\ShowAllMedicalExaminationViewModel.cs" />
+    <Compile Include="ViewModel\Employee\ShowAllPaymantDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Employee\ShowAllVisitViewModel.cs" />
+    <Compile Include="ViewModel\Employee\ShowDetailsContractViewModel.cs" />
+    <Compile Include="ViewModel\Employee\ShowDetailsEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\Employee\TenureTypeListViewModel.cs" />
+    <Compile Include="ViewModel\Employee\VisitTypeListViewModel.cs" />
+    <Compile Include="ViewModel\Login\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModel\Login\EditProfileEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\Login\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MedicalExaminationType\MedicalExaminationTypeListViewModel.cs" />
+    <Compile Include="ViewModel\MedicalFacility\CreateMedicalFacilityViewModel.cs" />
+    <Compile Include="ViewModel\MedicalFacility\EditMedicalFacilityViewModel.cs" />
+    <Compile Include="ViewModel\MedicalFacility\MedicalFacilityViewModel.cs" />
+    <Compile Include="ViewModel\MedicalFacility\ShowDetailsMedicalFacilityViewModel.cs" />
+    <Compile Include="ViewModel\MedicBranchType\MedicalBranchTypeListViewModel.cs" />
+    <Compile Include="ViewModel\MedicBranchType\MedicBranchTypeViewModel.cs" />
+    <Compile Include="ViewModel\MedicBranchType\CreateMedicBranchTypeViewModel.cs" />
+    <Compile Include="ViewModel\MedicalExaminationType\MedicalExaminationTypeViewModel.cs" />
+    <Compile Include="ViewModel\MedicalExaminationType\CreateMedicalExaminationTypeViewModel.cs" />
+    <Compile Include="ViewModel\Patient\ShowAllMedicalExaminationPatientViewModel.cs" />
+    <Compile Include="ViewModel\Patient\ShowAllPatientViewModel.cs" />
+    <Compile Include="ViewModel\Patient\ShowAllPrescriptionPatientViewModel.cs" />
+    <Compile Include="ViewModel\Patient\ShowAllRefferalPatientViewModel.cs" />
+    <Compile Include="ViewModel\Patient\ShowDetailsPatientViewModel.cs" />
+    <Compile Include="ViewModel\Patient\ShowDetailsRefferalViewModel.cs" />
+    <Compile Include="ViewModel\Patient\ShowDetailsVisitViewModel.cs" />
+    <Compile Include="ViewModel\PriceList\PriceListViewModel.cs" />
+    <Compile Include="ViewModel\PriceList\CreatePriceListViewModel.cs" />
+    <Compile Include="ViewModel\TenureType\TenureTypeViewModel.cs" />
+    <Compile Include="ViewModel\TenureType\CreateTenureTypeViewModel.cs" />
+    <Compile Include="ViewModel\TitleType\TitleTypeListViewModel.cs" />
+    <Compile Include="ViewModel\TitleType\TitleTypeViewModel.cs" />
+    <Compile Include="ViewModel\TitleType\CreateTitleTypeViewModel.cs" />
+    <Compile Include="ViewModel\JobType\JobTypeViewModel.cs" />
+    <Compile Include="ViewModel\JobType\CreateJobTypeViewModel.cs" />
+    <Compile Include="ViewModel\VisitType\VisitTypeViewModel.cs" />
+    <Compile Include="ViewModel\VisitType\CreateVisitTypeViewModel.cs" />
+    <Compile Include="ViewModel\ContractType\ContractTypeViewModel.cs" />
+    <Compile Include="ViewModel\ContractType\CreateContractTypeViewModel.cs" />
+    <Compile Include="ViewModel\Specialization\CreateSpecializationViewModel.cs" />
+    <Compile Include="ViewModel\Specialization\SpecializationViewModel.cs" />
+    <Compile Include="ViewModel\Scheduler\EventViewModel.cs" />
+    <Compile Include="ViewModel\Visit\ShowAllVistViewModel.cs" />
+    <Compile Include="ViewModel\Visit\VisitListViewModel.cs" />
+    <Compile Include="ViewModel\Patient\ShowPrescriptionDetailsViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\Home.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\ProfileView.css" />
+    <Content Include="Content\css\Registration.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\util.css" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content\homePage.css" />
+    <Content Include="Content\img\about.jpg" />
+    <Content Include="Content\img\apple-touch-icon.png" />
+    <Content Include="Content\img\avatar.png" />
+    <Content Include="Content\img\departments-1.jpg" />
+    <Content Include="Content\img\departments-2.jpg" />
+    <Content Include="Content\img\departments-3.jpg" />
+    <Content Include="Content\img\departments-4.jpg" />
+    <Content Include="Content\img\departments-5.jpg" />
+    <Content Include="Content\img\doctors\doctors-1.jpg" />
+    <Content Include="Content\img\doctors\doctors-2.jpg" />
+    <Content Include="Content\img\doctors\doctors-3.jpg" />
+    <Content Include="Content\img\doctors\doctors-4.jpg" />
+    <Content Include="Content\img\favicon.ico" />
+    <Content Include="Content\img\favicon.png" />
+    <Content Include="Content\img\gallery\gallery-1.jpg" />
+    <Content Include="Content\img\gallery\gallery-2.jpg" />
+    <Content Include="Content\img\gallery\gallery-3.jpg" />
+    <Content Include="Content\img\gallery\gallery-4.jpg" />
+    <Content Include="Content\img\gallery\gallery-5.jpg" />
+    <Content Include="Content\img\gallery\gallery-6.jpg" />
+    <Content Include="Content\img\gallery\gallery-7.jpg" />
+    <Content Include="Content\img\gallery\gallery-8.jpg" />
+    <Content Include="Content\img\hero-bg.jpg" />
+    <Content Include="Content\img\testimonials\testimonials-1.jpg" />
+    <Content Include="Content\img\testimonials\testimonials-2.jpg" />
+    <Content Include="Content\img\testimonials\testimonials-3.jpg" />
+    <Content Include="Content\img\testimonials\testimonials-4.jpg" />
+    <Content Include="Content\img\testimonials\testimonials-5.jpg" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\css\table.css" />
+    <Content Include="Content\vendor\animate.css\animate.compat.css" />
+    <Content Include="Content\vendor\animate.css\animate.css" />
+    <Content Include="Content\vendor\animate.css\animate.min.css" />
+    <Content Include="Content\vendor\animate\animate.css" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker.css" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker.min.css" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.css" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\vendor\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\js\bootstrap-datepicker.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker-en-CA.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ar-tn.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.bm.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.bn.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.br.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-CA.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-IE.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-NZ.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-ZA.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.hi.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.km.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.oc.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.si.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ta.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.tg.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.tk.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.uz-cyrl.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.uz-latn.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\vendor\boxicons\css\animations.css" />
+    <Content Include="Content\vendor\boxicons\css\boxicons.css" />
+    <Content Include="Content\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="Content\vendor\boxicons\css\transformations.css" />
+    <Content Include="Content\vendor\boxicons\fonts\boxicons.svg" />
+    <Content Include="Content\vendor\counterup\counterup.min.js" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content\vendor\fonts\Lato\OFL.txt" />
+    <Content Include="Content\vendor\fonts\montserrat\OFL.txt" />
+    <Content Include="Content\vendor\icofont\icofont.min.css" />
+    <Content Include="Content\vendor\jquery.easing\jquery.easing.min.js" />
+    <Content Include="Content\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\vendor\owl.carousel\assets\ajax-loader.gif" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.carousel.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.theme.default.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.theme.default.min.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.theme.green.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.theme.green.min.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.video.play.png" />
+    <Content Include="Content\vendor\owl.carousel\owl.carousel.js" />
+    <Content Include="Content\vendor\owl.carousel\owl.carousel.min.js" />
+    <Content Include="Content\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Content\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Content\vendor\php-email-form\validate.js" />
+    <Content Include="Content\vendor\remixicon\remixicon.css" />
+    <Content Include="Content\vendor\remixicon\remixicon.svg" />
+    <Content Include="Content\vendor\remixicon\remixicon.symbol.svg" />
+    <Content Include="Content\vendor\select2\select2.css" />
+    <Content Include="Content\vendor\select2\select2.js" />
+    <Content Include="Content\vendor\select2\select2.min.css" />
+    <Content Include="Content\vendor\select2\select2.min.js" />
+    <Content Include="Content\vendor\venobox\venobox.css" />
+    <Content Include="Content\vendor\venobox\venobox.js" />
+    <Content Include="Content\vendor\venobox\venobox.min.css" />
+    <Content Include="Content\vendor\venobox\venobox.min.js" />
+    <Content Include="Content\vendor\waypoints\jquery.waypoints.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\iMedicalDbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>iMedicalDbContext.edmx</DependentUpon>
+      <LastGenOutput>iMedicalDbContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\iMedicalDbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>iMedicalDbContext.edmx</DependentUpon>
+      <LastGenOutput>iMedicalDbContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\dhtmlxscheduler.css" />
+    <Content Include="Scripts\dhtmlxscheduler.js" />
+    <Content Include="Scripts\dhtmlxScheduler\dhtmlxscheduler.css" />
+    <Content Include="Scripts\dhtmlxScheduler\dhtmlxscheduler.js" />
+    <Content Include="Scripts\dhtmlxScheduler\dhtmlxscheduler_contrast_black.css" />
+    <Content Include="Scripts\dhtmlxScheduler\dhtmlxscheduler_contrast_white.css" />
+    <Content Include="Scripts\dhtmlxScheduler\dhtmlxscheduler_custom_lightbox.js" />
+    <Content Include="Scripts\dhtmlxScheduler\dhtmlxscheduler_flat.css" />
+    <Content Include="Scripts\dhtmlxScheduler\dhtmlxscheduler_material.css" />
+    <Content Include="Scripts\dhtmlxScheduler\dhtmlxscheduler_terrace.css" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_active_links.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_agenda_view.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_all_timed.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_collision.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_container_autoresize.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_cookie.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_csp.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_daytimeline.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_drag_between.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_editors.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_expand.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_grid_view.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_html_templates.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_key_nav.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_layer.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_limit.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_live_updates.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_map_view.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_minical.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_monthheight.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_multisection.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_multiselect.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_multisource.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_mvc.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_offline.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_outerdrag.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_pdf.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_quick_info.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_readonly.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_recurring.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_serialize.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_timeline.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_tooltip.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_treetimeline.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_units.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_url.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_week_agenda.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_wp.js" />
+    <Content Include="Scripts\dhtmlxScheduler\ext\dhtmlxscheduler_year_view.js" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\buttons.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\but_repeat.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\calendar.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\clock_big.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\clock_small.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\collapse_expand_icon.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\controls.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\databg.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\databg_now.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\export_ical.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\export_pdf.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\icon.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\images.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\loading.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs\resize_dots.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\arrow_left.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\arrow_right.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\but_repeat.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\calendar.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\clock_big.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\clock_small.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\close_icon.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\collapse_expand_icon.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\controls.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\databg.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\databg_now.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\export_ical.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\export_pdf.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\resize_dots.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_black\resizing.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\arrow_left.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\arrow_right.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\but_repeat.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\calendar.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\clock_big.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\clock_small.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\close_icon.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\collapse_expand_icon.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\controls.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\databg.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\export_ical.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\export_pdf.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\quick_info_edit.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\resize_dots.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_contrast_white\resizing.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\agenda-calendar-hov.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\agenda-calendar.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\agenda_bg.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\arrow_left.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\arrow_left_hov.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\arrow_right.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\arrow_right_hov.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\but_repeat.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\calendar.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\clock_big.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\clock_small.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\close_icon.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\collapse_expand_icon.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\controls.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\databg.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\drag-horizontal.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\drag-vertical.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\export_ical.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\export_pdf.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\icon.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\menu-down.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\resizing.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\Shape.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\time.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_material\tree_arrow.svg" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\arrow_left.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\arrow_right.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\but_repeat.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\calendar.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\clock_big.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\clock_small.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\close_icon.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\collapse_expand_icon.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\controls.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\databg.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\databg_now.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\export_ical.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\export_pdf.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\resize_dots.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_dhx_terrace\resizing.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\agenda_bg.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\arrow_left.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\arrow_right.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\but_repeat.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\calendar.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\clock.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\clock_big.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\clock_small.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\close_icon.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\collapse_expand_icon.gif" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\controls.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\databg.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\databg_now.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\export_ical.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\export_pdf.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\resize_dots.png" />
+    <Content Include="Scripts\dhtmlxScheduler\imgs_flat\resizing.png" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_ar.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_be.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_ca.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_cn.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_cs.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_da.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_de.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_el.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_en.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_es.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_fi.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_fr.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_he.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_hu.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_id.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_it.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_jp.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_nb.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_nl.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_no.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_pl.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_pt.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_ro.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_ru.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_si.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_sk.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_sv.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_tr.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\locale_ua.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_be.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_cn.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_cs.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_da.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_de.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_el.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_en.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_es.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_fi.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_fr.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_he.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_it.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_nb.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_nl.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_pl.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_pt.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_ro.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_ru.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_sk.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_sv.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\locale_recurring_ua.js" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_be.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_cn.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_de.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_el.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_en.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_es.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_fr.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_he.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_it.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_nl.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_ro.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_ru.html" />
+    <Content Include="Scripts\dhtmlxScheduler\locale\recurring\repeat_template_sk.html" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\imgs\buttons.png" />
+    <Content Include="Scripts\imgs\but_repeat.gif" />
+    <Content Include="Scripts\imgs\calendar.gif" />
+    <Content Include="Scripts\imgs\clock_big.gif" />
+    <Content Include="Scripts\imgs\clock_small.gif" />
+    <Content Include="Scripts\imgs\colapce-expand-icon.gif" />
+    <Content Include="Scripts\imgs\controls.gif" />
+    <Content Include="Scripts\imgs\databg.png" />
+    <Content Include="Scripts\imgs\databg_now.png" />
+    <Content Include="Scripts\imgs\icon.png" />
+    <Content Include="Scripts\imgs\images.png" />
+    <Content Include="Scripts\imgs\loading.gif" />
+    <Content Include="Scripts\imgs_glossy\blue_tab.png" />
+    <Content Include="Scripts\imgs_glossy\blue_tab_wide.png" />
+    <Content Include="Scripts\imgs_glossy\buttons.gif" />
+    <Content Include="Scripts\imgs_glossy\but_repeat.gif" />
+    <Content Include="Scripts\imgs_glossy\calendar.gif" />
+    <Content Include="Scripts\imgs_glossy\clock_big.png" />
+    <Content Include="Scripts\imgs_glossy\clock_small.png" />
+    <Content Include="Scripts\imgs_glossy\colapce-expand-icon.gif" />
+    <Content Include="Scripts\imgs_glossy\controlls5.png" />
+    <Content Include="Scripts\imgs_glossy\databg.png" />
+    <Content Include="Scripts\imgs_glossy\databg_now.png" />
+    <Content Include="Scripts\imgs_glossy\event-bg.png" />
+    <Content Include="Scripts\imgs_glossy\icon.png" />
+    <Content Include="Scripts\imgs_glossy\left-separator.png" />
+    <Content Include="Scripts\imgs_glossy\left-time-bg.png" />
+    <Content Include="Scripts\imgs_glossy\lightbox.png" />
+    <Content Include="Scripts\imgs_glossy\loading.gif" />
+    <Content Include="Scripts\imgs_glossy\move.png" />
+    <Content Include="Scripts\imgs_glossy\multi-days-bg.png" />
+    <Content Include="Scripts\imgs_glossy\second-top-days-bg.png" />
+    <Content Include="Scripts\imgs_glossy\top-days-bg.png" />
+    <Content Include="Scripts\imgs_glossy\top-separator.gif" />
+    <Content Include="Scripts\imgs_glossy\white_tab.png" />
+    <Content Include="Scripts\imgs_glossy\white_tab_wide.png" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker.css.map" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\vendor\boxicons\fonts\boxicons.eot" />
+    <Content Include="Content\vendor\boxicons\fonts\boxicons.ttf" />
+    <Content Include="Content\vendor\boxicons\fonts\boxicons.woff" />
+    <Content Include="Content\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="Content\vendor\icofont\fonts\icofont.woff" />
+    <Content Include="Content\vendor\icofont\fonts\icofont.woff2" />
+    <Content Include="Content\vendor\jquery\jquery.min.map" />
+    <Content Include="Content\vendor\owl.carousel\LICENSE" />
+    <Content Include="Content\vendor\owl.carousel\README.md" />
+    <Content Include="Content\vendor\remixicon\remixicon.eot" />
+    <Content Include="Content\vendor\remixicon\remixicon.less" />
+    <Content Include="Content\vendor\remixicon\remixicon.ttf" />
+    <Content Include="Content\vendor\remixicon\remixicon.woff" />
+    <Content Include="Content\vendor\remixicon\remixicon.woff2" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Content\fonts\OpenSans\OpenSans-Bold.ttf" />
+    <Content Include="Content\fonts\OpenSans\OpenSans-BoldItalic.ttf" />
+    <Content Include="Content\fonts\OpenSans\OpenSans-ExtraBold.ttf" />
+    <Content Include="Content\fonts\OpenSans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="Content\fonts\OpenSans\OpenSans-Italic.ttf" />
+    <Content Include="Content\fonts\OpenSans\OpenSans-Light.ttf" />
+    <Content Include="Content\fonts\OpenSans\OpenSans-LightItalic.ttf" />
+    <Content Include="Content\fonts\OpenSans\OpenSans-Regular.otf" />
+    <Content Include="Content\fonts\OpenSans\OpenSans-Regular.ttf" />
+    <Content Include="Content\fonts\OpenSans\OpenSans-SemiBold.ttf" />
+    <Content Include="Content\fonts\OpenSans\OpenSans-SemiBoldItalic.ttf" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Content\vendor\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Content\vendor\fonts\Lato\Lato-Black.ttf" />
+    <Content Include="Content\vendor\fonts\Lato\Lato-BlackItalic.ttf" />
+    <Content Include="Content\vendor\fonts\Lato\Lato-Bold.ttf" />
+    <Content Include="Content\vendor\fonts\Lato\Lato-BoldItalic.ttf" />
+    <Content Include="Content\vendor\fonts\Lato\Lato-Hairline.ttf" />
+    <Content Include="Content\vendor\fonts\Lato\Lato-HairlineItalic.ttf" />
+    <Content Include="Content\vendor\fonts\Lato\Lato-Italic.ttf" />
+    <Content Include="Content\vendor\fonts\Lato\Lato-Light.ttf" />
+    <Content Include="Content\vendor\fonts\Lato\Lato-LightItalic.ttf" />
+    <Content Include="Content\vendor\fonts\Lato\Lato-Regular.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Content\vendor\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Content\vendor\fonts\OpenSans\OpenSans-Bold.ttf" />
+    <Content Include="Content\vendor\fonts\OpenSans\OpenSans-BoldItalic.ttf" />
+    <Content Include="Content\vendor\fonts\OpenSans\OpenSans-ExtraBold.ttf" />
+    <Content Include="Content\vendor\fonts\OpenSans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="Content\vendor\fonts\OpenSans\OpenSans-Italic.ttf" />
+    <Content Include="Content\vendor\fonts\OpenSans\OpenSans-Light.ttf" />
+    <Content Include="Content\vendor\fonts\OpenSans\OpenSans-LightItalic.ttf" />
+    <Content Include="Content\vendor\fonts\OpenSans\OpenSans-Regular.otf" />
+    <Content Include="Content\vendor\fonts\OpenSans\OpenSans-Regular.ttf" />
+    <Content Include="Content\vendor\fonts\OpenSans\OpenSans-SemiBold.ttf" />
+    <Content Include="Content\vendor\fonts\OpenSans\OpenSans-SemiBoldItalic.ttf" />
+    <EntityDeploy Include="Models\iMedicalDbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>iMedicalDbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\iMedicalDbContext.edmx.diagram">
+      <DependentUpon>iMedicalDbContext.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ContractType\ShowAll.cshtml" />
+    <Content Include="Views\ContractType\AddNew.cshtml" />
+    <Content Include="Views\VisitType\AddNew.cshtml" />
+    <Content Include="Views\VisitType\ShowAll.cshtml" />
+    <Content Include="Views\JobType\ShowAll.cshtml" />
+    <Content Include="Views\JobType\AddNew.cshtml" />
+    <Content Include="Views\TitleType\ShowAll.cshtml" />
+    <Content Include="Views\TitleType\AddNew.cshtml" />
+    <Content Include="Views\TenureType\ShowAll.cshtml" />
+    <Content Include="Views\TenureType\AddNew.cshtml" />
+    <Content Include="Views\PriceList\ShowAll.cshtml" />
+    <Content Include="Views\PriceList\AddNew.cshtml" />
+    <Content Include="Views\MedicalExaminationType\ShowAll.cshtml" />
+    <Content Include="Views\MedicalExaminationType\AddNew.cshtml" />
+    <Content Include="Views\MedicBranchType\ShowAll.cshtml" />
+    <Content Include="Views\MedicBranchType\AddNew.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Doctor\Index.cshtml" />
+    <Content Include="Views\Paramedical\Index.cshtml" />
+    <Content Include="Views\Administration\Index.cshtml" />
+    <Content Include="Views\Patient\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\Shared\_DoctorLayout.cshtml" />
+    <Content Include="Views\Shared\_AdministrationrLayout.cshtml" />
+    <Content Include="Views\Paramedical\Dictionary.cshtml" />
+    <Content Include="Views\Shared\_PatientLayout.cshtml" />
+    <Content Include="Views\Shared\_ParamedicalLayout .cshtml" />
+    <Content Include="Views\Paramedical\ShowAllPatient.cshtml" />
+    <Content Include="Views\Registration\Registration.cshtml" />
+    <Content Include="Views\Account\Success.cshtml" />
+    <Content Include="Views\Paramedical\RegistrationPatient.cshtml" />
+    <Content Include="Views\Paramedical\RegistrationNewPatient.cshtml" />
+    <Content Include="Views\Administration\AddNewEmployee.cshtml" />
+    <Content Include="Views\Administration\ShowAllMedicalFacility.cshtml" />
+    <Content Include="Views\Administration\AddNewMedicalFacility.cshtml" />
+    <Content Include="Views\Administration\ShowAllEmployee.cshtml" />
+    <Content Include="Views\Administration\Dictionary.cshtml" />
+    <Content Include="Views\Administration\AddNewDoctor.cshtml" />
+    <Content Include="Views\Administration\AddNewParamedical.cshtml" />
+    <Content Include="Views\Administration\ShowAllDoctor.cshtml" />
+    <Content Include="Views\Administration\ShowAllParamedical.cshtml" />
+    <Content Include="Views\Administration\ShowAllAdministration.cshtml" />
+    <Content Include="Views\Administration\AddNewContract.cshtml" />
+    <Content Include="Views\Administration\ShowAllContract.cshtml" />
+    <Content Include="Views\Administration\AddNewBilling.cshtml" />
+    <Content Include="Views\Administration\AddNewPaimentDetails.cshtml" />
+    <Content Include="Views\Administration\ShowProfile.cshtml" />
+    <Content Include="Views\Administration\EditProfile.cshtml" />
+    <Content Include="Views\Patient\ShowProfile.cshtml" />
+    <Content Include="Views\Doctor\ShowProfile.cshtml" />
+    <Content Include="Views\Doctor\EditProfile.cshtml" />
+    <Content Include="Views\Administration\ShowDetailsMedicalFacility.cshtml" />
+    <Content Include="Views\Administration\EditDetailsMedicalFacility.cshtml" />
+    <Content Include="Views\Administration\ShowAllDetailsEmployeeFacility.cshtml" />
+    <Content Include="Views\Doctor\AddNewPrescription.cshtml" />
+    <Content Include="Views\Doctor\AddNewRef.cshtml" />
+    <Content Include="Views\Doctor\AddNewReferral.cshtml" />
+    <Content Include="Views\Doctor\AddNewVisitDet.cshtml" />
+    <Content Include="Views\Paramedical\AddNewVisitDet.cshtml" />
+    <Content Include="Views\Paramedical\AddNewVisit.cshtml" />
+    <Content Include="Views\Paramedical\AddNewMedicalExamination.cshtml" />
+    <Content Include="Views\Paramedical\AddNewMedicalExaminationDetails.cshtml" />
+    <Content Include="Views\Paramedical\ShowAllVisit.cshtml" />
+    <Content Include="Views\Paramedical\ShowAllMedicalExamination.cshtml" />
+    <Content Include="Views\Paramedical\ShowProfile.cshtml" />
+    <Content Include="Views\Paramedical\EditProfile.cshtml" />
+    <Content Include="Views\Doctor\ShowAllVisit.cshtml" />
+    <Content Include="Views\Administration\ShowAllPaymentDetails.cshtml" />
+    <Content Include="Views\Administration\ShowAllBillingTenure.cshtml" />
+    <Content Include="Views\Patient\ShowAllVisit.cshtml" />
+    <Content Include="Views\Patient\ShowAllMedicalExamination.cshtml" />
+    <Content Include="Views\Patient\ShowAllPrescription.cshtml" />
+    <Content Include="Views\Patient\ShowAllReferral.cshtml" />
+    <Content Include="Views\Patient\ShowRefferalDetails.cshtml" />
+    <Content Include="Views\Patient\ShowPrescriptionDetails.cshtml" />
+    <Content Include="Views\Doctor\EditVisit.cshtml" />
+    <Content Include="Views\Patient\ShowVisitDetails.cshtml" />
+    <Content Include="Views\Administration\ShowDetailsContract.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52219</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44348/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

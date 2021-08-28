@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "Dictionary";
+    Layout = "~/Views/Shared/_AdministrationrLayout.cshtml";
+}
+<head>
+  
+</head>
+            <div class="container">
+                <div class="title"></div>
+
+                <div class="row" style="margin-top: 180px;">
+                    <div class="col-md-12">
+                    </div>
+                    <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Lp.</th>
+                                        <th class="text-center">Nazwa</th>
+                                        <th class="text-center">Rodzaj</th>
+                                        <th class="text-center">Akcja</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">Rodzaj umowy</td>
+                                        <td class="text-center">Kadry</td>
+                                        <td class="td-actions text-center">
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" href="/ContractType/ShowAll">
+                                                <a href="/ContractType/ShowAll" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Pokaż</i></a>
+                                            </button>
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/ContractType/AddNew" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Dodaj</i></a>
+                                            </button>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">Stanowiska</td>
+                                        <td class="text-center">Kadry</td>
+                                        <td class="td-actions text-center">
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/JobType/ShowAll" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Pokaż</i></a>
+                                            </button>
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/JobType/AddNew" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Dodaj</i></a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center">Rodzaje placówek</td>
+                                        <td class="text-center">Struktura</td>
+                                        <td class="td-actions text-center">
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/MedicBranchType/ShowAll" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Pokaż</i></a>
+                                            </button>
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/MedicBranchType/AddNew" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Dodaj</i></a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">4</td>
+                                        <td class="text-center">Zabiegi rodzaj</td>
+                                        <td class="text-center">Specialistyczne</td>
+                                        <td class="td-actions text-center ">
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/MedicalExaminationType/ShowAll" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Pokaż</i></a>
+                                            </button>
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/MedicalExaminationType/AddNew" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Dodaj</i></a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">Cennik</td>
+                                        <td class="text-center">Płace</td>
+                                        <td class="td-actions text-center">
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/PriceList/ShowAll" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Pokaż</i></a>
+                                            </button>
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/PriceList/AddNew" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Dodaj</i></a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">6</td>
+                                        <td class="text-center">Specializacje</td>
+                                        <td class="text-center">Specialistyczne</td>
+                                        <td class="td-actions text-center">
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/Specialization/ShowAll" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Pokaż</i></a>
+                                            </button>
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/Specialization/AddNew" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Dodaj</i></a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">7</td>
+                                        <td class="text-center">Zatrudnienie rodzaj</td>
+                                        <td class="text-center">Kadry</td>
+                                        <td class="td-actions text-center">
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/TenureType/ShowAll" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Pokaż</i></a>
+                                            </button>
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/TenureType/AddNew" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Dodaj</i></a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">Tytuły medyczne</td>
+                                        <td class="text-center">Kadry</td>
+                                        <td class="td-actions text-center">
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/TitleType/ShowAll" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Pokaż</i></a>
+                                            </button>
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/TitleType/AddNew" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Dodaj</i></a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">Wizyty rodzaj</td>
+                                        <td class="text-center">Specialistyczne</td>
+                                        <td class="td-actions text-center">
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/VisitType/ShowAll" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Pokaż</i></a>
+
+                                            </button>
+                                            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                <a href="/VisitType/AddNew" class="material-icons" style="color: white; text-decoration: none;"><i class="material-icons">Dodaj</i></a>
+                                            </button>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <script src="~/Content/vendor/jquery/jquery-3.2.1.min.js"></script>
+            <script src="~/Content/vendor/bootstrap/js/popper.js"></script>
+            <script src="~/Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+            <script src="~/Content/vendor/select2/select2.min.js"></script>
+            <script src="~/Content/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script>
+                $('.js-pscroll').each(function () {
+                    var ps = new PerfectScrollbar(this);
+
+                    $(window).on('resize', function () {
+                        ps.update();
+                    })
+                });
+
+
+            </script>
+            <script src="~/Content/js/main.js"></script>

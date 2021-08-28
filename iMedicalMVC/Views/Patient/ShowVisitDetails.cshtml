@@ -1,0 +1,72 @@
+﻿@model iMedicalMVC.ViewModel.Patient.ShowDetailsVisitViewModel
+
+@{
+    ViewBag.Title = "ShowVisitDetails";
+    Layout = "~/Views/Shared/_PatientLayout.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="~/Content/css/ProfileView.css" rel="stylesheet" />
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container" style="margin-top:180px;">
+    <div class="row">
+
+
+
+        <div class="col-md-7 ">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">  <h4>Szczegóły skierowania</h4></div>
+                <div class="panel-body">
+
+                    <div class="box box-info">
+
+                        <div class="box-body">
+
+                            <div class="col-sm-5 col-xs-6 tital ">Numer wizyty</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.VisitNumber)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Data rejestracji</div><div class="col-sm-7">@Html.DisplayFor(model => model.DateReservation)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Data wizyty</div><div class="col-sm-7"> @Html.DisplayFor(model => model.DateStart)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Wykonane czynności</div><div class="col-sm-7">@Html.DisplayFor(model => model.ActivitesPerfomed)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Zalecenia</div><div class="col-sm-7">@Html.DisplayFor(model => model.Recomendations)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Informacjie ogólne</div><div class="col-sm-7">@Html.DisplayFor(model => model.GeneralInformation)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Dawkowanie leków</div><div class="col-sm-7">@Html.DisplayFor(model => model.DosageOfMedication)</div>
+
+                            <div class="clearfix"></div>
+                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+    $(function () {
+                $('#profile-image1').on('click', function () {
+                    $('#profile-image-upload').click();
+                });
+            });</script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    </div>
+</div>

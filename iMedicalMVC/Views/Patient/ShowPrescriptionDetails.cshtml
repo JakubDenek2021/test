@@ -1,0 +1,106 @@
+﻿@model iMedicalMVC.Views.Patient.ShowPrescriptionDetailsViewModel
+
+@{
+    ViewBag.Title = "ShowPrescriptionDetails";
+    Layout = "~/Views/Shared/_PatientLayout.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="~/Content/css/ProfileView.css" rel="stylesheet" />
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container" style="margin-top:180px;">
+    <div class="row">
+
+
+
+        <div class="col-md-7 ">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">  <h4>Szczegóły recepty</h4></div>
+                <div class="panel-body">
+
+                    <div class="box box-info">
+
+                        <div class="box-body">
+
+
+
+
+
+                            <div class="col-sm-5 col-xs-6 tital ">Numer recepty</div><div class="col-sm-7 col-xs-6 ">@Html.DisplayFor(model => model.NumberPrescription)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Kod NFZ recepty</div><div class="col-sm-7">@Html.DisplayFor(model => model.PrescriptionCode)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Data wystawienia</div><div class="col-sm-7">@Html.DisplayFor(model => model.IssueDate)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Lek nr 1 </div><div class="col-sm-7"> @Html.DisplayFor(model => model.Medication_1)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Dawka leku nr 1 </div><div class="col-sm-7">@Html.DisplayFor(model => model.Dose_1)</div>
+
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Lek nr 2 </div><div class="col-sm-7"> @Html.DisplayFor(model => model.Medication_2)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Dawka leku nr 2</div><div class="col-sm-7">@Html.DisplayFor(model => model.Dose_2)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Lek nr 3 </div><div class="col-sm-7"> @Html.DisplayFor(model => model.Medication_3)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Dawka leku nr 3</div><div class="col-sm-7">@Html.DisplayFor(model => model.Dose_3)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Lek nr 4 </div><div class="col-sm-7"> @Html.DisplayFor(model => model.Medication_4)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Dawka leku nr 4</div><div class="col-sm-7">@Html.DisplayFor(model => model.Dose_4)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Lek nr 5 </div><div class="col-sm-7"> @Html.DisplayFor(model => model.Medication_5)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Dawka leku nr 5</div><div class="col-sm-7">@Html.DisplayFor(model => model.Dose_5)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Lek nr 6 </div><div class="col-sm-7"> @Html.DisplayFor(model => model.Medication_6)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Dawka leku nr 6</div><div class="col-sm-7">@Html.DisplayFor(model => model.Dose_6)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Lek nr 7 </div><div class="col-sm-7"> @Html.DisplayFor(model => model.Medication_7)</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+
+                            <div class="col-sm-5 col-xs-6 tital ">Dawka leku nr 7</div><div class="col-sm-7">@Html.DisplayFor(model => model.Dose_7)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+    $(function () {
+                $('#profile-image1').on('click', function () {
+                    $('#profile-image-upload').click();
+                });
+            });</script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    </div>
+</div>

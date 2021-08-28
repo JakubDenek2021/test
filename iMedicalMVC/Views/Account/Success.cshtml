@@ -1,0 +1,92 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/homePage.css">
+    <link href="~/Content/img/favicon.png" rel="icon">
+    <link href="~/Content/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="~/Content/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Content/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+        <div class="container d-flex">
+            <div class="contact-info mr-auto">
+                <i><strong>Jakub Denek </strong>  "System zarządzania przychodnią lekarską"</i>
+
+            </div>
+            <div class="social-links">
+                <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+                <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+                <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+                <a href="#" class="skype"><i class="icofont-skype"></i></a>
+                <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo mr-auto"><a href="index.html">Medilab</a></h1>
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="#about">O nas</a></li>
+                    <li><a href="#services">Usługi</a></li>
+                    <li><a href="#departments">Placówki</a></li>
+                    <li><a href="#doctors">Lekarze</a></li>
+
+                    <li><a href="#contact">Kontakt</a></li>
+
+                </ul>
+            </nav>
+
+            <a href="/Registration/Registration" class="appointment-btn scrollto">Zarejestruj się</a>
+        </div>
+    </header>
+
+    @Html.AntiForgeryToken()
+    <div class="registration-form">
+        <div class="test">
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <h3>Gratulacje !</br></br><i> Teraz możesz się zalogować</i></h3>
+     
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account"><a href="/Account/Login" style="text-decoration: none; color: white;">Zaloguj</a></button>
+            </div>
+        </div>
+        
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+
+
+

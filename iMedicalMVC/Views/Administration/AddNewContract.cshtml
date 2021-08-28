@@ -1,0 +1,102 @@
+﻿@model iMedicalMVC.ViewModel.Employee.CreateNewContractViewModel
+
+@{
+    ViewBag.Title = "AddNewContract";
+    Layout = "~/Views/Shared/_AdministrationrLayout.cshtml";
+}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container" style="margin-top: 150px">
+        <h1 class="well">Dodanie nowego kontraktu</h1>
+        <div class="col-lg-12 well">
+            <div class="row">
+                <form>
+                    <div class="col-sm-12">
+
+                        <div class="row">
+                            <h3 style="padding: 20px 20px;"><strong>Dane szczegółowe</strong></h3>
+
+                            <div class="col-sm-6 form-group">
+                                <label>Pracownik</label>
+                                @Html.DropDownListFor(model => model.EmployeeListId, Model.EmployeeList, new { @class = "form-control input_text" })
+                                @Html.ValidationMessageFor(model => model.EmployeeListId, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Rodzaj stanowiska</label>
+                                @Html.DropDownListFor(model => model.JobTypeListId, Model.JobTypeList, new { @class = "form-control input_text" })
+                                @Html.ValidationMessageFor(model => model.JobTypeListId, "", new { @class = "text-danger" })
+                            </div>
+                            <h3 style="padding: 20px 20px;"><strong>Forma kontraktu</strong></h3>
+                            <div class="col-sm-6 form-group">
+                                <label>Wymiar czasu pracy</label>
+                                @Html.DropDownListFor(model => model.TenureTypeListId, Model.TenureTypeList, new { @class = "form-control input_text" })
+                                @Html.ValidationMessageFor(model => model.TenureTypeListId, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Forma zatrudnienia</label>
+                                @Html.DropDownListFor(model => model.ContractTypeListId, Model.ContracTypeList, new { @class = "form-control input_text" })
+                                @Html.ValidationMessageFor(model => model.ContractTypeListId, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Placówka macierzysta</label>
+                                @Html.DropDownListFor(model => model.MedicalFacilityListId, Model.MedicalFacilityList, new { @class = "form-control input_text" })
+                                @Html.ValidationMessageFor(model => model.MedicalFacilityListId, "", new { @class = "text-danger" })
+                            </div>
+
+                            <h3 style="padding: 20px 20px;"><strong>Dane finansowe</strong></h3>
+                            <div class="col-sm-6 form-group">
+                                <label>Wynagordzenie ryczałtowe</label>
+                                @Html.EditorFor(model => model.MonthRate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.MonthRate, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Wynagordzenie godzinowe</label>
+                                @Html.EditorFor(model => model.HourlyRate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.HourlyRate, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Premia</label>
+                                @Html.EditorFor(model => model.Bonu, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Bonu, "", new { @class = "text-danger" })
+
+                            </div>
+                            <h3 style="padding: 20px 20px;"><strong>Dane dodatkowe</strong></h3>
+                            <div class="col-sm-6 form-group">
+                                <label>Data zawarcia</label>
+                                @Html.EditorFor(model => model.ConclusionDate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ConclusionDate, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Numer konta</label>
+                                @Html.EditorFor(model => model.NumberAccount, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.NumberAccount, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Dodatkowy komentarz</label>
+                                @Html.EditorFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-info">Zapisz</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}
+
+  

@@ -1,0 +1,70 @@
+﻿@model iMedicalMVC.ViewModel.MedicalFacility.EditMedicalFacilityViewModel
+
+@{
+    ViewBag.Title = "EditDetailsMedicalFacility";
+    Layout = "~/Views/Shared/_AdministrationrLayout.cshtml";
+}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container" style="margin-top: 150px">
+        <h1 class="well">Rejestracja nowej placówki</h1>
+        <div class="col-lg-12 well">
+            <div class="row">
+                <form>
+                    <div class="col-sm-12">
+                        <h3 style="padding: 20px 20px;"><strong>Dane główne </strong></h3>
+                        <div class="col-sm-6 form-group">
+                            <label>Nazwa pełna</label>
+                            @Html.EditorFor(model => model.LongName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.LongName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Nazwa skrócona</label>
+                            @Html.EditorFor(model => model.ShortName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ShortName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Miejscowość</label>
+                            @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Kod pocztowy</label>
+                            @Html.EditorFor(model => model.PostCode, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PostCode, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Ulica</label>
+                            @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Street, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Numer budynku</label>
+                            @Html.EditorFor(model => model.BuilidingNumber, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.BuilidingNumber, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>NIP</label>
+                            @Html.EditorFor(model => model.NIP, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NIP, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Status placówki</label>
+                            @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                        </div>
+                    <button type="submit" class="btn btn-lg btn-info">Zapisz</button>
+                    </div>
+            </form>
+        </div>
+        </div>
+    </div>
+}
